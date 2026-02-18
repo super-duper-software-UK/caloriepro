@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaloriePro — Calorie & Exercise Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; }
+        
+        .hero { text-align: center; padding: 80px 20px 60px; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        .logo { width: 120px; height: 120px; margin: 0 auto 24px; border-radius: 28px; overflow: hidden; box-shadow: 0 20px 50px rgba(16,185,129,0.3); }
+        .logo img { width: 100%; height: 100%; }
+        h1 { font-size: 3rem; font-weight: 800; margin-bottom: 12px; background: linear-gradient(135deg, #10b981, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .tagline { font-size: 1.3rem; color: #94a3b8; margin-bottom: 32px; }
+        
+        .badge { display: inline-block; }
+        .badge img { height: 54px; }
+        .badge-placeholder { display: inline-flex; align-items: center; gap: 10px; background: white; color: #1e293b; padding: 12px 24px; border-radius: 12px; font-weight: 600; font-size: 1rem; text-decoration: none; transition: transform 0.2s; }
+        .badge-placeholder:hover { transform: scale(1.05); }
+        .badge-placeholder svg { width: 28px; height: 28px; }
+
+        .features { padding: 60px 20px; max-width: 900px; margin: 0 auto; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+        .feature { background: #1e293b; border-radius: 16px; padding: 28px; border: 1px solid #334155; }
+        .feature-icon { font-size: 2rem; margin-bottom: 12px; }
+        .feature h3 { font-size: 1.1rem; margin-bottom: 8px; color: #f1f5f9; }
+        .feature p { color: #94a3b8; font-size: 0.9rem; line-height: 1.6; }
+
+        .privacy-banner { text-align: center; padding: 50px 20px; background: linear-gradient(135deg, #059669, #10b981); }
+        .privacy-banner h2 { font-size: 1.8rem; margin-bottom: 12px; }
+        .privacy-banner p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+
+        .links { text-align: center; padding: 50px 20px; }
+        .links a { color: #10b981; text-decoration: none; margin: 0 16px; font-weight: 500; font-size: 1rem; }
+        .links a:hover { text-decoration: underline; }
+
+        .footer { text-align: center; padding: 30px 20px; color: #475569; font-size: 0.85rem; border-top: 1px solid #1e293b; }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="logo">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2ZmZmZmZiIgcng9IjIwIi8+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdyZWVuR3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMTBiOTgxO3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwNTk2Njk7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB4PSIxNSIgeT0iMzUiIHdpZHRoPSI3MCIgaGVpZ2h0PSIxNSIgZmlsbD0idXJsKCNncmVlbkdyYWRpZW50KSIgCiAgICAgICAgdHJhbnNmb3JtPSJyb3RhdGUoNDUgNTAgNTApIiByeD0iNy41Ii8+CiAgPHJlY3QgeD0iMTUiIHk9IjUwIiB3aWR0aD0iNzAiIGhlaWdodD0iMTUiIGZpbGw9InVybCgjZ3JlZW5HcmFkaWVudCkiIAogICAgICAgIHRyYW5zZm9ybT0icm90YXRlKC00NSA1MCA1MCkiIHJ4PSI3LjUiLz4KPC9zdmc+Cg==" alt="CaloriePro">
+        </div>
+        <h1>CaloriePro</h1>
+        <p class="tagline">Track calories, nutrition & exercise — completely private</p>
+        <a href="#" class="badge-placeholder">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Download on the App Store
+        </a>
+    </div>
+
+    <div class="features">
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">🍎</div>
+                <h3>2,000+ Foods</h3>
+                <p>Comprehensive UK food database with full macro breakdowns. Search, scan barcodes, or add custom entries.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💪</div>
+                <h3>155+ Exercises</h3>
+                <p>From running to yoga, track any workout with accurate MET-based calorie burn calculations.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <h3>Smart Reports</h3>
+                <p>Weekly charts, macro analysis, weight tracking, BMI calculator, and daily insights all in one place.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📷</div>
+                <h3>Barcode Scanner</h3>
+                <p>Instantly look up any product's nutrition by scanning its barcode. Powered by Open Food Facts.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📤</div>
+                <h3>Export Everything</h3>
+                <p>Beautiful Excel reports, printable summaries, and CSV exports. Your data is always portable.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h3>100% Private</h3>
+                <p>All data stored locally on your device. No accounts, no servers, no ads. GDPR compliant by design.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="privacy-banner">
+        <h2>Your data never leaves your device</h2>
+        <p>Unlike other health apps, CaloriePro keeps everything local. No accounts. No cloud. No tracking. Just you and your goals.</p>
+    </div>
+
+    <div class="links">
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="mailto:support@caloriepro.app">Contact</a>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Paul Mills. All rights reserved.</p>
+    </div>
+</body>
+</html>

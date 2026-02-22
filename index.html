@@ -3,104 +3,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CaloriePro — Calorie & Exercise Tracker</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>CaloriePro — Track Calories, Macros & Exercise Privately</title>
+    <meta name="description" content="CaloriePro is a free, privacy-first calorie and macro tracker with 5,000+ UK foods. No account needed. Works offline. Your data stays on your device.">
+    <meta name="theme-color" content="#10b981">
+    <link rel="icon" type="image/png" sizes="192x192" href="app/icon-192.png">
+    <link rel="apple-touch-icon" href="app/icon-192.png">
+    <meta property="og:title" content="CaloriePro — Private Calorie Tracker">
+    <meta property="og:description" content="Track calories, macros, exercise & weight. 5,000+ UK foods. 100% private. Works offline.">
+    <meta property="og:type" content="website">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', -apple-system, sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; }
-        
-        .hero { text-align: center; padding: 80px 20px 60px; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
-        .logo { width: 120px; height: 120px; margin: 0 auto 24px; border-radius: 28px; overflow: hidden; box-shadow: 0 20px 50px rgba(16,185,129,0.3); }
-        .logo img { width: 100%; height: 100%; }
-        h1 { font-size: 3rem; font-weight: 800; margin-bottom: 12px; background: linear-gradient(135deg, #10b981, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .tagline { font-size: 1.3rem; color: #94a3b8; margin-bottom: 32px; }
-        
-        .badge { display: inline-block; }
-        .badge img { height: 54px; }
-        .badge-placeholder { display: inline-flex; align-items: center; gap: 10px; background: white; color: #1e293b; padding: 12px 24px; border-radius: 12px; font-weight: 600; font-size: 1rem; text-decoration: none; transition: transform 0.2s; }
-        .badge-placeholder:hover { transform: scale(1.05); }
-        .badge-placeholder svg { width: 28px; height: 28px; }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #10b981; --primary-dark: #059669; --primary-light: #34d399;
+            --dark: #0f172a; --darker: #020617; --card: #1e293b; --card-border: #334155;
+            --text: #f1f5f9; --text-muted: #94a3b8; --text-dim: #64748b;
+            --danger: #ef4444; --blue: #3b82f6; --amber: #f59e0b; --purple: #8b5cf6;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--darker); color: var(--text); line-height: 1.7; overflow-x: hidden; }
+        a { color: var(--primary-light); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--primary); }
 
-        .features { padding: 60px 20px; max-width: 900px; margin: 0 auto; }
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
-        .feature { background: #1e293b; border-radius: 16px; padding: 28px; border: 1px solid #334155; }
-        .feature-icon { font-size: 2rem; margin-bottom: 12px; }
-        .feature h3 { font-size: 1.1rem; margin-bottom: 8px; color: #f1f5f9; }
-        .feature p { color: #94a3b8; font-size: 0.9rem; line-height: 1.6; }
+        /* === HERO === */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden; padding: 40px 20px;
+        }
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse 80% 60% at 50% 20%, rgba(16,185,129,0.15) 0%, transparent 60%),
+                        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(59,130,246,0.08) 0%, transparent 50%);
+        }
+        .hero-grid {
+            position: absolute; inset: 0; opacity: 0.03;
+            background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+        .hero-content { position: relative; z-index: 1; text-align: center; max-width: 720px; }
+        .hero-logo { width: 120px; height: 120px; margin: 0 auto 32px; filter: drop-shadow(0 8px 24px rgba(16,185,129,0.3)); animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-12px); } }
+        .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 20px; }
+        .hero h1 .accent { background: linear-gradient(135deg, var(--primary), var(--blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p { font-size: 1.15rem; color: var(--text-muted); max-width: 540px; margin: 0 auto 36px; }
+        .hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 12px; font-weight: 600; font-size: 1rem; transition: all 0.25s; border: none; cursor: pointer; font-family: inherit; }
+        .btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; box-shadow: 0 4px 20px rgba(16,185,129,0.3); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(16,185,129,0.4); color: white; }
+        .btn-outline { background: transparent; border: 2px solid var(--card-border); color: var(--text); }
+        .btn-outline:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+        .hero-badges { display: flex; gap: 24px; justify-content: center; margin-top: 40px; flex-wrap: wrap; }
+        .badge { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-muted); }
+        .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--primary); }
 
-        .privacy-banner { text-align: center; padding: 50px 20px; background: linear-gradient(135deg, #059669, #10b981); }
-        .privacy-banner h2 { font-size: 1.8rem; margin-bottom: 12px; }
-        .privacy-banner p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+        /* === SECTION === */
+        .section { padding: 100px 20px; }
+        .section-header { text-align: center; max-width: 600px; margin: 0 auto 60px; }
+        .section-header h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 16px; }
+        .section-header p { color: var(--text-muted); font-size: 1.05rem; }
+        .container { max-width: 1100px; margin: 0 auto; }
 
-        .links { text-align: center; padding: 50px 20px; }
-        .links a { color: #10b981; text-decoration: none; margin: 0 16px; font-weight: 500; font-size: 1rem; }
-        .links a:hover { text-decoration: underline; }
+        /* === STATS BAR === */
+        .stats-bar { background: var(--card); border: 1px solid var(--card-border); border-radius: 20px; padding: 32px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 20px; max-width: 800px; margin: 0 auto; }
+        .stat { text-align: center; }
+        .stat-value { font-size: 2rem; font-weight: 700; background: linear-gradient(135deg, var(--primary), var(--primary-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .stat-label { font-size: 0.8rem; color: var(--text-dim); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
 
-        .footer { text-align: center; padding: 30px 20px; color: #475569; font-size: 0.85rem; border-top: 1px solid #1e293b; }
+        /* === FEATURES GRID === */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .feature-card {
+            background: var(--card); border: 1px solid var(--card-border); border-radius: 16px;
+            padding: 32px; transition: all 0.3s; position: relative; overflow: hidden;
+        }
+        .feature-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+        .feature-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--primary), var(--blue)); opacity: 0; transition: opacity 0.3s; }
+        .feature-card:hover::before { opacity: 1; }
+        .feature-icon { font-size: 2rem; margin-bottom: 16px; display: block; }
+        .feature-card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
+        .feature-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
+
+        /* === PRIVACY SECTION === */
+        .privacy-section { background: linear-gradient(180deg, var(--darker) 0%, rgba(16,185,129,0.05) 50%, var(--darker) 100%); }
+        .privacy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; max-width: 900px; margin: 0 auto; }
+        .privacy-shield { text-align: center; }
+        .shield-icon { font-size: 6rem; filter: drop-shadow(0 0 40px rgba(16,185,129,0.3)); }
+        .privacy-points { list-style: none; }
+        .privacy-points li { padding: 12px 0; display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem; }
+        .check { color: var(--primary); font-weight: 700; font-size: 1.1rem; flex-shrink: 0; }
+
+        /* === CTA SECTION === */
+        .cta-section {
+            text-align: center; padding: 80px 20px;
+            background: linear-gradient(135deg, rgba(16,185,129,0.1) 0%, rgba(59,130,246,0.05) 100%);
+            border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);
+        }
+        .cta-section h2 { font-size: 2rem; margin-bottom: 16px; }
+        .cta-section p { color: var(--text-muted); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+        /* === FOOTER === */
+        footer { padding: 48px 20px; text-align: center; border-top: 1px solid var(--card-border); }
+        .footer-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 20px; }
+        .footer-links a { color: var(--text-muted); font-size: 0.9rem; }
+        .footer-links a:hover { color: var(--primary); }
+        .footer-copy { color: var(--text-dim); font-size: 0.8rem; }
+
+        @media (max-width: 768px) {
+            .privacy-grid { grid-template-columns: 1fr; text-align: center; }
+            .privacy-points { max-width: 400px; margin: 0 auto; }
+            .hero-badges { gap: 16px; }
+        }
     </style>
 </head>
 <body>
-    <div class="hero">
-        <div class="logo">
-            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2ZmZmZmZiIgcng9IjIwIi8+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdyZWVuR3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMTBiOTgxO3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwNTk2Njk7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB4PSIxNSIgeT0iMzUiIHdpZHRoPSI3MCIgaGVpZ2h0PSIxNSIgZmlsbD0idXJsKCNncmVlbkdyYWRpZW50KSIgCiAgICAgICAgdHJhbnNmb3JtPSJyb3RhdGUoNDUgNTAgNTApIiByeD0iNy41Ii8+CiAgPHJlY3QgeD0iMTUiIHk9IjUwIiB3aWR0aD0iNzAiIGhlaWdodD0iMTUiIGZpbGw9InVybCgjZ3JlZW5HcmFkaWVudCkiIAogICAgICAgIHRyYW5zZm9ybT0icm90YXRlKC00NSA1MCA1MCkiIHJ4PSI3LjUiLz4KPC9zdmc+Cg==" alt="CaloriePro">
-        </div>
-        <h1>CaloriePro</h1>
-        <p class="tagline">Track calories, nutrition & exercise — completely private</p>
-        <a href="#" class="badge-placeholder">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-            Download on the App Store
-        </a>
-    </div>
 
-    <div class="features">
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+        <img src="app/icon-192.png" alt="CaloriePro" class="hero-logo">
+        <h1>Track your nutrition.<br><span class="accent">Keep your privacy.</span></h1>
+        <p>CaloriePro is a free, offline calorie and macro tracker with 5,000+ UK foods. No account. No cloud. Your data never leaves your device.</p>
+        <div class="hero-cta">
+            <a href="app/index.html" class="btn btn-primary">🚀 Open CaloriePro</a>
+            <a href="#features" class="btn btn-outline">See Features ↓</a>
+        </div>
+        <div class="hero-badges">
+            <div class="badge"><div class="badge-dot"></div> 100% Free</div>
+            <div class="badge"><div class="badge-dot"></div> No Sign-up</div>
+            <div class="badge"><div class="badge-dot"></div> Works Offline</div>
+            <div class="badge"><div class="badge-dot"></div> GDPR Compliant</div>
+        </div>
+    </div>
+</section>
+
+<!-- STATS -->
+<section class="section" style="padding-top:40px;">
+    <div class="container">
+        <div class="stats-bar">
+            <div class="stat"><div class="stat-value">5,000+</div><div class="stat-label">UK Foods</div></div>
+            <div class="stat"><div class="stat-value">155+</div><div class="stat-label">Exercises</div></div>
+            <div class="stat"><div class="stat-value">0</div><div class="stat-label">Data Collected</div></div>
+            <div class="stat"><div class="stat-value">100%</div><div class="stat-label">Offline</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+    <div class="container">
+        <div class="section-header">
+            <h2>Everything you need to track your health</h2>
+            <p>A complete nutrition and fitness companion — no subscriptions, no ads, no compromise on privacy.</p>
+        </div>
         <div class="features-grid">
-            <div class="feature">
-                <div class="feature-icon">🍎</div>
-                <h3>2,000+ Foods</h3>
-                <p>Comprehensive UK food database with full macro breakdowns. Search, scan barcodes, or add custom entries.</p>
+            <div class="feature-card">
+                <span class="feature-icon">🍽️</span>
+                <h3>Calorie & Macro Tracking</h3>
+                <p>Log meals with full protein, carb, and fat breakdowns. Beautiful ring display shows your daily progress at a glance.</p>
             </div>
-            <div class="feature">
-                <div class="feature-icon">💪</div>
-                <h3>155+ Exercises</h3>
-                <p>From running to yoga, track any workout with accurate MET-based calorie burn calculations.</p>
+            <div class="feature-card">
+                <span class="feature-icon">🔍</span>
+                <h3>5,000+ UK Food Database</h3>
+                <p>Extensive database of branded UK foods, supermarket products, and restaurant items. Fuzzy search finds what you need instantly.</p>
             </div>
-            <div class="feature">
-                <div class="feature-icon">📊</div>
-                <h3>Smart Reports</h3>
-                <p>Weekly charts, macro analysis, weight tracking, BMI calculator, and daily insights all in one place.</p>
+            <div class="feature-card">
+                <span class="feature-icon">🏋️</span>
+                <h3>Exercise Logging</h3>
+                <p>155+ exercises with MET-based calorie calculations. Track both cardio and strength training with sets, reps, and weight.</p>
             </div>
-            <div class="feature">
-                <div class="feature-icon">📷</div>
-                <h3>Barcode Scanner</h3>
-                <p>Instantly look up any product's nutrition by scanning its barcode. Powered by Open Food Facts.</p>
+            <div class="feature-card">
+                <span class="feature-icon">⚖️</span>
+                <h3>Weight Tracking</h3>
+                <p>Log daily weigh-ins, see trends over time, and track your BMI. Visual charts show your progress beautifully.</p>
             </div>
-            <div class="feature">
-                <div class="feature-icon">📤</div>
-                <h3>Export Everything</h3>
-                <p>Beautiful Excel reports, printable summaries, and CSV exports. Your data is always portable.</p>
+            <div class="feature-card">
+                <span class="feature-icon">💧</span>
+                <h3>Water Tracking</h3>
+                <p>Hit your daily hydration goal with tap-to-log water tracking. Celebrations when you reach your target.</p>
             </div>
-            <div class="feature">
-                <div class="feature-icon">🔒</div>
-                <h3>100% Private</h3>
-                <p>All data stored locally on your device. No accounts, no servers, no ads. GDPR compliant by design.</p>
+            <div class="feature-card">
+                <span class="feature-icon">⏱️</span>
+                <h3>Intermittent Fasting</h3>
+                <p>Built-in fasting timer with popular protocols like 16:8 and 18:6. Track your fasting windows effortlessly.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">📊</span>
+                <h3>Reports & Export</h3>
+                <p>Generate detailed reports with charts and insights. Export to PDF, Excel, CSV, or JSON — your data, your way.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🏆</span>
+                <h3>Achievements & XP</h3>
+                <p>Earn achievements, gain XP, and level up as you build healthy habits. Streak tracking keeps you motivated.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">📅</span>
+                <h3>Calendar & History</h3>
+                <p>Navigate through past days, view weekly summaries, and spot patterns in your nutrition over time.</p>
             </div>
         </div>
     </div>
+</section>
 
-    <div class="privacy-banner">
-        <h2>Your data never leaves your device</h2>
-        <p>Unlike other health apps, CaloriePro keeps everything local. No accounts. No cloud. No tracking. Just you and your goals.</p>
+<!-- PRIVACY -->
+<section class="section privacy-section" id="privacy">
+    <div class="container">
+        <div class="section-header">
+            <h2>Privacy isn't a feature — it's the foundation</h2>
+            <p>Unlike most health apps, CaloriePro was built from scratch to keep your data on your device and nowhere else.</p>
+        </div>
+        <div class="privacy-grid">
+            <div class="privacy-shield">
+                <div class="shield-icon">🛡️</div>
+            </div>
+            <div>
+                <ul class="privacy-points">
+                    <li><span class="check">✓</span> All data stored locally on your device only</li>
+                    <li><span class="check">✓</span> No account or sign-up required</li>
+                    <li><span class="check">✓</span> No personal data sent to any server</li>
+                    <li><span class="check">✓</span> No tracking, analytics, or advertising</li>
+                    <li><span class="check">✓</span> Works completely offline</li>
+                    <li><span class="check">✓</span> GDPR & UK GDPR compliant by design</li>
+                    <li><span class="check">✓</span> Export and delete your data anytime</li>
+                </ul>
+            </div>
+        </div>
     </div>
+</section>
 
-    <div class="links">
-        <a href="support.html">Support</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
+<!-- CTA -->
+<section class="cta-section">
+    <h2>Start tracking in seconds</h2>
+    <p>No download needed — CaloriePro runs in your browser and works offline. Just tap the button and start logging.</p>
+    <a href="app/index.html" class="btn btn-primary" style="font-size:1.1rem; padding: 16px 36px;">🚀 Open CaloriePro — Free</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-links">
+        <a href="app/index.html">Open App</a>
+        <a href="faq.html">FAQ</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="app/privacy.html">Privacy Policy</a>
+        <a href="app/terms.html">Terms of Service</a>
         <a href="mailto:caloriepro@gmail.com">Contact</a>
     </div>
+    <p class="footer-copy">&copy; 2025-2026 Super Duper Software UK. All rights reserved.</p>
+</footer>
 
-    <div class="footer">
-        <p>&copy; 2026 Paul Mills. All rights reserved.</p>
-    </div>
 </body>
 </html>

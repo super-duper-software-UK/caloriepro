@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog — CaloriePro</title>
+    <meta name="description" content="CaloriePro version history and release notes.">
+    <meta name="theme-color" content="#10b981">
+    <link rel="icon" type="image/png" sizes="192x192" href="app/icon-192.png">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #10b981; --primary-dark: #059669;
+            --dark: #0f172a; --darker: #020617; --card: #1e293b; --card-border: #334155;
+            --text: #f1f5f9; --text-muted: #94a3b8; --text-dim: #64748b;
+            --blue: #3b82f6; --amber: #f59e0b; --purple: #8b5cf6;
+        }
+        body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--darker); color: var(--text); line-height: 1.7; }
+        a { color: var(--primary); text-decoration: none; }
+
+        .header { text-align: center; padding: 80px 20px 60px; }
+        .header img { width: 72px; height: 72px; margin-bottom: 20px; }
+        .header h1 { font-size: 2.4rem; font-weight: 700; margin-bottom: 12px; }
+        .header p { color: var(--text-muted); font-size: 1.05rem; }
+        .back { display: inline-block; margin-bottom: 20px; color: var(--text-muted); font-size: 0.9rem; }
+
+        .container { max-width: 740px; margin: 0 auto; padding: 0 20px 80px; }
+
+        .timeline { position: relative; padding-left: 32px; }
+        .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: var(--card-border); }
+
+        .release { position: relative; margin-bottom: 36px; }
+        .release::before { content: ''; position: absolute; left: -28px; top: 8px; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); border: 3px solid var(--darker); z-index: 1; }
+        .release.latest::before { box-shadow: 0 0 0 4px rgba(16,185,129,0.2); }
+
+        .release-header { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+        .version-num { font-size: 1.3rem; font-weight: 700; }
+        .version-date { font-size: 0.8rem; color: var(--text-dim); }
+        .tag { padding: 3px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .tag-latest { background: var(--primary); color: white; }
+        .tag-major { background: var(--blue); color: white; }
+
+        .changes { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 20px 24px; }
+        .change-cat { margin-bottom: 12px; }
+        .change-cat:last-child { margin-bottom: 0; }
+        .change-cat-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; margin-bottom: 6px; }
+        .change-cat-label.added { color: var(--primary); }
+        .change-cat-label.improved { color: var(--blue); }
+        .change-cat-label.fixed { color: var(--amber); }
+        .change-list { list-style: none; }
+        .change-list li { padding: 4px 0; padding-left: 16px; position: relative; color: var(--text-muted); font-size: 0.88rem; }
+        .change-list li::before { content: '•'; position: absolute; left: 0; color: var(--text-dim); }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <a href="index.html" class="back">← Back to Home</a>
+    <br>
+    <img src="app/icon-192.png" alt="CaloriePro">
+    <h1>Changelog</h1>
+    <p>What's new in CaloriePro</p>
+</div>
+
+<div class="container">
+<div class="timeline">
+
+    <div class="release latest">
+        <div class="release-header">
+            <span class="version-num">v1.7</span>
+            <span class="tag tag-latest">Latest</span>
+            <span class="version-date">February 2026</span>
+        </div>
+        <div class="changes">
+            <div class="change-cat">
+                <div class="change-cat-label added">Added</div>
+                <ul class="change-list">
+                    <li>XSS protection and input sanitisation across all user inputs</li>
+                    <li>WCAG AA contrast compliance for accessibility</li>
+                    <li>ARIA labels and progressbar roles for screen readers</li>
+                    <li>Animated calorie progress ring with pulse on completion</li>
+                    <li>Haptic feedback on key interactions (iOS)</li>
+                    <li>Fuzzy search for food database</li>
+                    <li>Achievement unlock toasts trigger immediately on action</li>
+                    <li>Water goal celebration with confetti animation</li>
+                </ul>
+            </div>
+            <div class="change-cat">
+                <div class="change-cat-label improved">Improved</div>
+                <ul class="change-list">
+                    <li>Removed dead code and unused functions</li>
+                    <li>Cleaned up console.log statements for production</li>
+                    <li>Report print button now uses native iOS print directly</li>
+                    <li>Privacy page updated with correct contact information</li>
+                    <li>Onboarding swipe gesture sensitivity refined</li>
+                </ul>
+            </div>
+            <div class="change-cat">
+                <div class="change-cat-label fixed">Fixed</div>
+                <ul class="change-list">
+                    <li>Fixed duplicate confetti CSS causing animation conflicts</li>
+                    <li>Fixed achievements not triggering until page navigation</li>
+                    <li>Fixed profile name display reading from wrong data source</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="release">
+        <div class="release-header">
+            <span class="version-num">v1.6</span>
+            <span class="tag tag-major">Major</span>
+            <span class="version-date">February 2026</span>
+        </div>
+        <div class="changes">
+            <div class="change-cat">
+                <div class="change-cat-label added">Added</div>
+                <ul class="change-list">
+                    <li>Grouped meals by type (breakfast, lunch, dinner, snacks) with subtotals</li>
+                    <li>Swipe-to-delete and swipe-to-edit on meal items</li>
+                    <li>Personalised greetings using profile name</li>
+                    <li>Calorie ring shows remaining calories</li>
+                    <li>Enhanced empty states with call-to-action buttons</li>
+                    <li>Floating action button for quick food logging</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="release">
+        <div class="release-header">
+            <span class="version-num">v1.5</span>
+            <span class="version-date">February 2026</span>
+        </div>
+        <div class="changes">
+            <div class="change-cat">
+                <div class="change-cat-label added">Added</div>
+                <ul class="change-list">
+                    <li>Food database expanded to 5,000+ UK foods</li>
+                    <li>Added bakery items, coffee shop foods, kids' foods, and UK branded products</li>
+                    <li>Portion size selector with visual portion guides</li>
+                    <li>Templates and saved meals for repeat logging</li>
+                    <li>Daily notes feature</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="release">
+        <div class="release-header">
+            <span class="version-num">v1.0 – v1.4</span>
+            <span class="version-date">January – February 2026</span>
+        </div>
+        <div class="changes">
+            <div class="change-cat">
+                <div class="change-cat-label added">Added</div>
+                <ul class="change-list">
+                    <li>Core calorie and macro tracking with ring display</li>
+                    <li>Exercise logging with 155+ exercises and MET calculations</li>
+                    <li>Weight tracking with trend charts</li>
+                    <li>Water tracking with daily goals</li>
+                    <li>Intermittent fasting timer</li>
+                    <li>Achievements and XP levelling system</li>
+                    <li>Calendar view with date navigation</li>
+                    <li>Reports with PDF, Excel, CSV, and JSON export</li>
+                    <li>Data backup and restore</li>
+                    <li>Dark/light theme toggle</li>
+                    <li>7-slide onboarding tutorial</li>
+                    <li>Weekly challenges and daily insights</li>
+                    <li>Mood and energy tracking</li>
+                    <li>Favourites and recent foods</li>
+                    <li>Progressive Web App with offline support</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+</body>
+</html>

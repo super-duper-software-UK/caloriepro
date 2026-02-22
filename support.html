@@ -3,125 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support - CaloriePro</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Support — CaloriePro</title>
+    <meta name="description" content="Get help with CaloriePro. Contact us, find answers to common questions, and troubleshoot issues.">
+    <meta name="theme-color" content="#10b981">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', -apple-system, sans-serif; background: #f1f5f9; color: #1e293b; line-height: 1.7; }
-        .header { background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 50px 20px; text-align: center; }
-        .header h1 { font-size: 2.2rem; margin-bottom: 8px; }
-        .header p { opacity: 0.9; font-size: 1.1rem; }
-        .logo { width: 80px; height: 80px; margin: 0 auto 16px; display: block; }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        .card { background: white; border-radius: 16px; padding: 32px; margin-bottom: 24px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
-        h2 { color: #10b981; font-size: 1.4rem; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
-        h3 { font-size: 1.1rem; margin: 20px 0 12px; color: #334155; }
-        p { margin-bottom: 16px; color: #475569; }
-        ul { margin: 16px 0; padding-left: 24px; }
-        li { margin-bottom: 10px; color: #475569; }
-        .highlight { background: #ecfdf5; border-left: 4px solid #10b981; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 20px 0; }
-        a { color: #10b981; text-decoration: none; font-weight: 500; }
-        a:hover { text-decoration: underline; }
-        .faq-item { border-bottom: 1px solid #e2e8f0; padding: 16px 0; }
-        .faq-item:last-child { border-bottom: none; }
-        .faq-q { font-weight: 600; color: #1e293b; margin-bottom: 8px; font-size: 1.05rem; }
-        .footer { text-align: center; padding: 40px 20px; color: #94a3b8; font-size: 0.85rem; }
-        .btn { display: inline-block; background: #10b981; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
-        .btn:hover { background: #059669; text-decoration: none; transform: translateY(-1px); }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #10b981; --primary-dark: #059669; --primary-light: #34d399;
+            --dark: #0f172a; --darker: #020617; --card: #1e293b; --card-border: #334155;
+            --text: #f1f5f9; --text-muted: #94a3b8; --text-dim: #64748b;
+            --blue: #3b82f6; --amber: #f59e0b;
+        }
+        body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--darker); color: var(--text); line-height: 1.7; }
+        a { color: var(--primary-light); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--primary); }
+
+        .header { text-align: center; padding: 80px 20px 60px; }
+        .header img { width: 72px; height: 72px; margin-bottom: 20px; }
+        .header h1 { font-size: 2.4rem; font-weight: 700; margin-bottom: 12px; }
+        .header p { color: var(--text-muted); font-size: 1.05rem; max-width: 500px; margin: 0 auto; }
+        .back { display: inline-block; margin-bottom: 20px; color: var(--text-muted); font-size: 0.9rem; }
+
+        .container { max-width: 740px; margin: 0 auto; padding: 0 20px 80px; }
+
+        .contact-card {
+            background: var(--card); border: 1px solid var(--card-border); border-radius: 16px;
+            padding: 36px; text-align: center; margin-bottom: 32px;
+        }
+        .contact-card .icon { font-size: 2.5rem; margin-bottom: 16px; }
+        .contact-card h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
+        .contact-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 12px; font-weight: 600; font-size: 1rem; transition: all 0.25s; border: none; cursor: pointer; font-family: inherit; }
+        .btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; box-shadow: 0 4px 16px rgba(16,185,129,0.25); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(16,185,129,0.35); color: white; }
+        .response-note { font-size: 0.8rem; color: var(--text-dim); margin-top: 16px; }
+
+        .help-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 40px; }
+        .help-card {
+            background: var(--card); border: 1px solid var(--card-border); border-radius: 14px;
+            padding: 28px; transition: all 0.3s;
+        }
+        .help-card:hover { border-color: var(--primary); transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.25); }
+        .help-card .card-icon { font-size: 1.6rem; margin-bottom: 12px; display: block; }
+        .help-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
+        .help-card p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; margin-bottom: 14px; }
+        .help-card a.card-link { font-size: 0.85rem; font-weight: 600; color: var(--primary-light); }
+
+        .troubleshoot { background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 36px; margin-bottom: 32px; }
+        .troubleshoot h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .step { display: flex; gap: 16px; margin-bottom: 20px; }
+        .step:last-child { margin-bottom: 0; }
+        .step-num { width: 32px; height: 32px; min-width: 32px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; margin-top: 2px; }
+        .step-content h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
+        .step-content p { color: var(--text-muted); font-size: 0.88rem; }
+
+        .info-section { background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 36px; margin-bottom: 32px; }
+        .info-section h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+        .info-section p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px; }
+        .info-section p:last-child { margin-bottom: 0; }
+
+        footer { text-align: center; padding: 32px 20px; border-top: 1px solid var(--card-border); }
+        .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 16px; }
+        .footer-links a { color: var(--text-muted); font-size: 0.85rem; }
+        .footer-links a:hover { color: var(--primary); }
+        .footer-copy { color: var(--text-dim); font-size: 0.75rem; }
+
+        @media (max-width: 600px) {
+            .help-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2ZmZmZmZiIgcng9IjIwIi8+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdyZWVuR3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMTBiOTgxO3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwNTk2Njk7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB4PSIxNSIgeT0iMzUiIHdpZHRoPSI3MCIgaGVpZ2h0PSIxNSIgZmlsbD0idXJsKCNncmVlbkdyYWRpZW50KSIgCiAgICAgICAgdHJhbnNmb3JtPSJyb3RhdGUoNDUgNTAgNTApIiByeD0iNy41Ii8+CiAgPHJlY3QgeD0iMTUiIHk9IjUwIiB3aWR0aD0iNzAiIGhlaWdodD0iMTUiIGZpbGw9InVybCgjZ3JlZW5HcmFkaWVudCkiIAogICAgICAgIHRyYW5zZm9ybT0icm90YXRlKC00NSA1MCA1MCkiIHJ4PSI3LjUiLz4KPC9zdmc+Cg==" alt="CaloriePro" class="logo">
-        <h1>CaloriePro Support</h1>
-        <p>We're here to help</p>
+
+<div class="header">
+    <a href="index.html" class="back">← Back to Home</a>
+    <br>
+    <img src="icon-192.png" alt="CaloriePro">
+    <h1>Support</h1>
+    <p>Need help with CaloriePro? We're here to assist.</p>
+</div>
+
+<div class="container">
+
+    <!-- Contact -->
+    <div class="contact-card">
+        <div class="icon">📧</div>
+        <h2>Contact Us</h2>
+        <p>Have a question, found a bug, or want to suggest a feature? Drop us an email and we'll get back to you.</p>
+        <a href="mailto:caloriepro@gmail.com" class="btn btn-primary">Email caloriepro@gmail.com</a>
+        <p class="response-note">We typically respond within 24–48 hours</p>
     </div>
 
-    <div class="container">
-        <div class="card">
-            <h2>📧 Contact Us</h2>
-            <p>Having an issue or need help with CaloriePro? We'd love to hear from you.</p>
-            <a href="mailto:caloriepro@gmail.com" class="btn">Email Support</a>
-            <p style="margin-top: 16px; font-size: 0.9rem;">Email: <a href="mailto:caloriepro@gmail.com">caloriepro@gmail.com</a></p>
-            <p style="font-size: 0.9rem;">We aim to respond within 48 hours.</p>
+    <!-- Quick Help -->
+    <div class="help-grid">
+        <div class="help-card">
+            <span class="card-icon">❓</span>
+            <h3>FAQ</h3>
+            <p>Find answers to the most common questions about CaloriePro.</p>
+            <a href="faq.html" class="card-link">View FAQ →</a>
         </div>
-
-        <div class="card">
-            <h2>❓ Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <div class="faq-q">Where is my data stored?</div>
-                <p>All your data is stored locally on your device. We don't have servers that store your personal information. Your meals, weight, exercise logs, and goals never leave your iPhone.</p>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-q">Do I need to create an account?</div>
-                <p>No. CaloriePro works immediately without any account or sign-up. Just download, complete the quick setup, and start tracking.</p>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-q">Will I lose my data if I delete the app?</div>
-                <p>Yes. Since all data is stored locally on your device, uninstalling the app will delete your data. We recommend using the Export feature (Profile > Export Data) to back up your data regularly. You can export as JSON and re-import it later.</p>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-q">How accurate are the calorie counts?</div>
-                <p>Our food database contains nutritional data for over 2,000 common foods. Barcode scans use the Open Food Facts database. While we strive for accuracy, all calorie and nutrition values are estimates. For precise dietary requirements, please consult a registered dietitian.</p>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-q">How does the barcode scanner work?</div>
-                <p>Point your camera at a product barcode. The app reads the barcode and looks up nutrition information from Open Food Facts, a free, collaborative food database. No personal data is sent — only the barcode number.</p>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-q">Can I export my data?</div>
-                <p>Yes! CaloriePro offers multiple export options: Excel reports (.xlsx) with 5 formatted worksheets, visual HTML reports you can share or print, CSV files for use in spreadsheets, and JSON backup of your complete data.</p>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-q">How are exercise calories calculated?</div>
-                <p>We use MET values (Metabolic Equivalent of Task) — the gold standard for estimating energy expenditure. The formula is: Calories = MET × weight(kg) × duration(hours). Your weight from your profile is used for personalised calculations.</p>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-q">Does CaloriePro work offline?</div>
-                <p>Yes. All core features work without an internet connection, including food logging, exercise tracking, and viewing reports. The only feature that requires internet is barcode scanning (to look up product data).</p>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-q">Can I change between dark and light mode?</div>
-                <p>Yes. Tap your profile icon, then tap the theme toggle (sun/moon icon) to switch between dark and light themes. The app also follows your device's system theme by default.</p>
-            </div>
-
-
+        <div class="help-card">
+            <span class="card-icon">📋</span>
+            <h3>Changelog</h3>
+            <p>See what's new, what's been improved, and what's been fixed.</p>
+            <a href="changelog.html" class="card-link">View Changelog →</a>
         </div>
-
-        <div class="card">
-            <h2>🔧 Troubleshooting</h2>
-            
-            <h3>Barcode scanner not working</h3>
-            <p>Ensure you've granted camera permission. Go to iPhone Settings > CaloriePro > Camera and make sure it's enabled. Try holding the barcode steady in good lighting.</p>
-
-            <h3>Data not saving</h3>
-            <p>CaloriePro uses your device's local storage. If your device storage is nearly full, the app may not be able to save data. Free up some space and try again.</p>
-
-            <h3>App feels slow</h3>
-            <p>If you have a very large amount of logged data (thousands of entries), the app may take a moment to load. Try closing and reopening the app. If the issue persists, export your data and use the Reset option in Profile to start fresh, then import your backup.</p>
+        <div class="help-card">
+            <span class="card-icon">🔒</span>
+            <h3>Privacy Policy</h3>
+            <p>Learn how CaloriePro protects your data and privacy.</p>
+            <a href="privacy.html" class="card-link">Read Policy →</a>
         </div>
-
-        <div class="card">
-            <h2>📋 Legal</h2>
-            <ul>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="terms.html">Terms of Service</a></li>
-            </ul>
+        <div class="help-card">
+            <span class="card-icon">📜</span>
+            <h3>Terms of Service</h3>
+            <p>Review the terms and conditions for using CaloriePro.</p>
+            <a href="terms.html" class="card-link">Read Terms →</a>
         </div>
     </div>
 
-    <div class="footer">
-        <p>CaloriePro &copy; 2026 Paul Mills. All rights reserved.</p>
-        <p style="margin-top: 8px;">Version 1.0.0</p>
+    <!-- Troubleshooting -->
+    <div class="troubleshoot">
+        <h2>🔧 Troubleshooting</h2>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+                <h4>App not loading or looks broken</h4>
+                <p>Force-refresh the page by pulling down on mobile, or pressing Ctrl+Shift+R on desktop. If installed as a PWA, try uninstalling and reinstalling.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+                <h4>Lost your data</h4>
+                <p>If you have a backup, go to Data &amp; Support → Import/Restore in the app. Without a backup, data cannot be recovered as it's stored locally. We recommend backing up regularly.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+                <h4>Food not in the database</h4>
+                <p>You can add custom foods with your own calorie and macro values. Tap the "+" button and choose "Add Custom Food". Your custom entries are saved alongside the built-in database.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+                <h4>Export or backup not working</h4>
+                <p>Make sure you're using a supported browser (Safari on iOS, Chrome on Android). Try using the Share option if the direct download doesn't work.</p>
+            </div>
+        </div>
     </div>
+
+    <!-- About -->
+    <div class="info-section">
+        <h2>ℹ️ About CaloriePro</h2>
+        <p>CaloriePro is developed by <strong>Super Duper Software UK</strong>. It's a free, privacy-first calorie and nutrition tracker designed for UK users.</p>
+        <p>All data is stored locally on your device — we don't collect, store, or have access to any of your personal health information.</p>
+        <p>CaloriePro includes 5,000+ UK foods, 155+ exercises, and features like weight tracking, intermittent fasting, water tracking, achievements, and detailed reports with export options.</p>
+    </div>
+
+</div>
+
+<footer>
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        
+        <a href="faq.html">FAQ</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+    </div>
+    <p class="footer-copy">&copy; 2025–2026 Super Duper Software UK. All rights reserved.</p>
+</footer>
+
 </body>
 </html>

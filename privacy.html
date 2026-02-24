@@ -3,168 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - CaloriePro</title>
+    <title>Privacy Policy — CaloriePro</title>
+    <meta name="theme-color" content="#10b981">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #f1f5f9; color: #1e293b; line-height: 1.7; padding-bottom: 40px; }
-        .header { background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 40px 20px; text-align: center; margin-top: 80px; }
-        .header h1 { font-size: 2rem; margin-bottom: 12px; }
-        .header p { opacity: 1; font-size: 1.2rem; font-weight: 600; color: white; }
-        .back-btn { position: fixed; top: 60px; top: max(60px, calc(env(safe-area-inset-top) + 12px)); left: 20px; z-index: 1000; background: rgba(255,255,255,0.95); color: #10b981; text-decoration: none; padding: 10px 16px; border-radius: 8px; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.1); backdrop-filter: blur(10px); transition: all 0.2s; }
-        .back-btn:hover { background: white; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        .card { background: white; border-radius: 16px; padding: 32px; margin-bottom: 24px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
-        h2 { color: #10b981; font-size: 1.4rem; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
-        h3 { font-size: 1.1rem; margin: 20px 0 12px; color: #334155; }
-        p { margin-bottom: 16px; color: #475569; }
-        ul { margin: 16px 0; padding-left: 24px; }
-        li { margin-bottom: 8px; color: #475569; }
-        .highlight { background: #ecfdf5; border-left: 4px solid #10b981; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 20px 0; }
-        .highlight strong { color: #059669; }
-        .date { text-align: center; color: #94a3b8; font-size: 0.9rem; margin-top: 40px; }
-        table { width: 100%; border-collapse: collapse; margin: 16px 0; }
-        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; }
-        th { background: #f8fafc; font-weight: 600; color: #334155; }
-        .badge { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
-        .badge.green { background: #dcfce7; color: #166534; }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #10b981; --primary-dark: #059669; --primary-light: #34d399; --dark: #0f172a; --darker: #020617; --card: #1e293b; --card-border: #334155; --text: #f1f5f9; --text-muted: #94a3b8; --text-dim: #64748b; }
+        body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--darker); color: var(--text); line-height: 1.7; }
+        a { color: var(--primary-light); text-decoration: none; } a:hover { color: var(--primary); }
+        .header { text-align: center; padding: 80px 20px 60px; }
+        .header img { width: 72px; height: 72px; margin-bottom: 20px; }
+        .header h1 { font-size: 2.4rem; font-weight: 700; margin-bottom: 12px; }
+        .header p { color: var(--text-muted); font-size: 1.05rem; }
+        .back { display: inline-block; margin-bottom: 20px; color: var(--text-muted); font-size: 0.9rem; }
+        .container { max-width: 740px; margin: 0 auto; padding: 0 20px 80px; }
+        .card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 28px 24px; margin-bottom: 20px; }
+        .card h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+        .card h3 { font-size: 0.95rem; font-weight: 600; margin: 18px 0 10px; color: var(--text-muted); }
+        .card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px; } .card p:last-child { margin-bottom: 0; }
+        .card ul { list-style: none; margin: 12px 0; padding: 0; }
+        .card li { padding: 6px 0 6px 20px; position: relative; color: var(--text-muted); font-size: 0.9rem; }
+        .card li::before { content: '•'; position: absolute; left: 0; color: var(--primary); font-weight: 700; }
+        .highlight { background: rgba(16,185,129,0.08); border-left: 3px solid var(--primary); padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 16px 0; }
+        .highlight strong { color: var(--primary-light); } .highlight p { margin: 0; }
+        table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+        th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--card-border); font-size: 0.85rem; }
+        th { color: var(--text-dim); font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; font-size: 0.75rem; }
+        td { color: var(--text-muted); }
+        .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; }
+        .badge.green { background: rgba(16,185,129,0.15); color: var(--primary-light); }
+        .date { text-align: center; color: var(--text-dim); font-size: 0.85rem; margin-top: 40px; }
+        footer { text-align: center; padding: 32px 20px; border-top: 1px solid var(--card-border); margin-top: 40px; }
+        .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 16px; }
+        .footer-links a { color: var(--text-muted); font-size: 0.85rem; } .footer-links a:hover { color: var(--primary); }
+        .footer-copy { color: var(--text-dim); font-size: 0.75rem; }
     </style>
 </head>
 <body>
-    <a href="index.html" class="back-btn">← Back to App</a>
-    
-    <div class="header">
-        <h1>🔒 Privacy Policy</h1>
-        <p>CaloriePro</p>
-        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2ZmZmZmZiIgcng9IjIwIi8+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTBiOTgxIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzA1OTY2OSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI0NiIgcj0iMzYiIGZpbGw9InVybCgjZykiLz4KICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjQ2IiByPSIyOCIgZmlsbD0iI2ZmZiIvPgogIDxjaXJjbGUgY3g9IjUwIiBjeT0iNDYiIHI9IjIyIiBmaWxsPSJub25lIiBzdHJva2U9IiNFNUU3RUIiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtZGFzaGFycmF5PSIxMDQiIHN0cm9rZS1kYXNob2Zmc2V0PSIwIiB0cmFuc2Zvcm09InJvdGF0ZSgxMzUgNTAgNDYpIi8+CiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI0NiIgcj0iMjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzEwYjk4MSIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1kYXNoYXJyYXk9IjEwNCIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjI5IiB0cmFuc2Zvcm09InJvdGF0ZSgxMzUgNTAgNDYpIi8+CiAgPHRleHQgeD0iNTAiIHk9IjQ0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iSGVsdmV0aWNhLEFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmb250LXNpemU9IjEyIiBmaWxsPSIjMUUyOTNCIj4xLDQ4MDwvdGV4dD4KICA8dGV4dCB4PSI1MCIgeT0iNTMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EsQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI1IiBmaWxsPSIjNjQ3NDhCIj5rY2FsPC90ZXh0PgogIDxjaXJjbGUgY3g9IjQwIiBjeT0iNjIiIHI9IjIuNSIgZmlsbD0iI0VGNDQ0NCIvPgogIDxjaXJjbGUgY3g9IjUwIiBjeT0iNjIiIHI9IjIuNSIgZmlsbD0iIzNCODJGNiIvPgogIDxjaXJjbGUgY3g9IjYwIiBjeT0iNjIiIHI9IjIuNSIgZmlsbD0iI0Y1OUUwQiIvPgogIDx0ZXh0IHg9IjQwIiB5PSI2My4yIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iSGVsdmV0aWNhLEFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmb250LXNpemU9IjIuNSIgZmlsbD0iI2ZmZiI+UDwvdGV4dD4KICA8dGV4dCB4PSI1MCIgeT0iNjMuMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkhlbHZldGljYSxBcmlhbCxzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iYm9sZCIgZm9udC1zaXplPSIyLjUiIGZpbGw9IiNmZmYiPkM8L3RleHQ+CiAgPHRleHQgeD0iNjAiIHk9IjYzLjIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EsQXJpYWwsc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iMi41IiBmaWxsPSIjZmZmIj5GPC90ZXh0PgogIDx0ZXh0IHg9IjUwIiB5PSI5MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkhlbHZldGljYSxBcmlhbCxzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iYm9sZCIgZm9udC1zaXplPSI4IiBmaWxsPSIjMDU5NjY5Ij5DYWxvcmllUHJvPC90ZXh0Pgo8L3N2Zz4K" alt="CaloriePro Logo" style="width:80px;height:80px;display:block;margin:16px auto;">
+<div class="header">
+    <a href="index.html" class="back" onclick="if(window.history.length>1){window.history.back();return false;}">← Back</a><br>
+    <img src="icon-192.png" alt="CaloriePro">
+    <h1>Privacy Policy</h1>
+    <p>How CaloriePro protects your data</p>
+</div>
+<div class="container">
+    <div class="card">
+        <h2>📱 Our Privacy Promise</h2>
+        <div class="highlight"><p><strong>Your data stays on YOUR device.</strong> We don't have servers that store your personal health information. Your meals, weight, and goals are stored locally on your device — we literally cannot see them.</p></div>
+        <p>CaloriePro is designed with privacy as a core principle. Unlike most health apps that upload your data to cloud servers, we keep everything local. This means:</p>
+        <ul>
+            <li>✅ No account required to use the app</li>
+            <li>✅ No personal data sent to our servers</li>
+            <li>✅ No selling your information to third parties</li>
+            <li>✅ No targeted advertising based on your health data</li>
+            <li>✅ Full GDPR compliance by design</li>
+        </ul>
     </div>
-    
-    <div class="container">
-        <div class="card">
-            <h2>📱 Our Privacy Promise</h2>
-            <div class="highlight">
-                <strong>Your data stays on YOUR device.</strong> We don't have servers that store your personal health information. Your meals, weight, and goals are stored locally on your iPhone - we literally cannot see them.
-            </div>
-            <p>CaloriePro is designed with privacy as a core principle. Unlike most health apps that upload your data to cloud servers, we keep everything local. This means:</p>
-            <ul>
-                <li>✅ No account required to use the app</li>
-                <li>✅ No personal data sent to our servers</li>
-                <li>✅ No selling your information to third parties</li>
-                <li>✅ No targeted advertising based on your health data</li>
-                <li>✅ Full GDPR compliance by design</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>📊 What Data We Handle</h2>
-            <table>
-                <tr>
-                    <th>Data Type</th>
-                    <th>Stored Where</th>
-                    <th>Who Can Access</th>
-                </tr>
-                <tr>
-                    <td>Meal logs & calories</td>
-                    <td><span class="badge green">Your Device Only</span></td>
-                    <td>Only you</td>
-                </tr>
-                <tr>
-                    <td>Weight history</td>
-                    <td><span class="badge green">Your Device Only</span></td>
-                    <td>Only you</td>
-                </tr>
-                <tr>
-                    <td>Exercise records</td>
-                    <td><span class="badge green">Your Device Only</span></td>
-                    <td>Only you</td>
-                </tr>
-                <tr>
-                    <td>Personal goals</td>
-                    <td><span class="badge green">Your Device Only</span></td>
-                    <td>Only you</td>
-                </tr>
-                <tr>
-                    <td>Profile information</td>
-                    <td><span class="badge green">Your Device Only</span></td>
-                    <td>Only you</td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="card">
-            <h2>📷 Barcode Scanning</h2>
-            <p>When you scan a product barcode, we look up nutrition information from the <strong>Open Food Facts</strong> database (openfoodfacts.org). This is an open, collaborative database.</p>
-            <h3>What happens:</h3>
-            <ul>
-                <li>The barcode number is sent to Open Food Facts API</li>
-                <li>Nutrition data is returned and displayed</li>
-                <li>No personal information is included in this request</li>
-                <li>Open Food Facts cannot identify you from a barcode lookup</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>💰 Purchases & Payments</h2>
-            <p>CaloriePro is available as a one-off purchase that includes all existing features. Optional premium features may be offered in the future as in-app purchases or subscriptions. All payments are processed by Apple (App Store) or Google (Play Store). We never see or store:</p>
-            <ul>
-                <li>Credit card numbers</li>
-                <li>Bank account details</li>
-                <li>Billing addresses</li>
-            </ul>
-            <p>We only receive confirmation that a purchase was made, allowing us to unlock any premium features. Your base app features are yours to keep regardless of any future purchases.</p>
-        </div>
-
-        <div class="card">
-            <h2>🔐 Data Security</h2>
-            <h3>Local Storage Security</h3>
-            <p>Your data is stored in your device's secure local storage. This data is:</p>
-            <ul>
-                <li>Encrypted by your device's operating system</li>
-                <li>Protected by your device's passcode/Face ID</li>
-                <li>Inaccessible to other apps</li>
-                <li>Deleted when you uninstall the app</li>
-            </ul>
-
-            <h3>Data Transmission Security</h3>
-            <p>When data is transmitted (barcode lookups):</p>
-            <ul>
-                <li>All connections use HTTPS encryption</li>
-                <li>Data is encrypted in transit</li>
-                <li>We use industry-standard security protocols</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>👤 Your Rights (GDPR/UK GDPR)</h2>
-            <p>You have the right to:</p>
-            <ul>
-                <li><strong>Access</strong> - View all your data (it's all on your device!)</li>
-                <li><strong>Export</strong> - Use the Export feature to download your data as JSON</li>
-                <li><strong>Delete</strong> - Clear app data or uninstall to delete everything</li>
-                <li><strong>Portability</strong> - Export and import your data freely</li>
-            </ul>
-            <div class="highlight">
-                Because we don't store your data on our servers, you have <strong>complete control</strong>. There's nothing for us to delete because we don't have it!
-            </div>
-        </div>
-
-        <div class="card">
-            <h2>👶 Children's Privacy</h2>
-            <p>CaloriePro is not intended for children under 13. We do not knowingly collect information from children. If you believe a child has provided us with information, please contact us.</p>
-        </div>
-
-        <div class="card">
-            <h2>🔄 Changes to This Policy</h2>
-            <p>We may update this privacy policy from time to time. We will notify you of any changes by:</p>
-            <ul>
-                <li>Posting the new policy in the app</li>
-                <li>Updating the "Last Updated" date below</li>
-                <li>For significant changes, showing a notification in the app</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>📧 Contact Us</h2>
-            <p>If you have any questions about this Privacy Policy, please contact us:</p>
-            <ul>
-                <li>Email: <a href="mailto:caloriepro@gmail.com">caloriepro@gmail.com</a></li>
-                <li>Website: <a href="https://super-duper-software-uk.github.io/caloriepro/">super-duper-software-uk.github.io
+    <div class="card">
+        <h2>📊 What Data We Handle</h2>
+        <table>
+            <tr><th>Data Type</th><th>Stored Where</th><th>Who Can Access</th></tr>
+            <tr><td>Meal logs &amp; calories</td><td><span class="badge green">Your Device Only</span></td><td>Only you</td></tr>
+            <tr><td>Weight history</td><td><span class="badge green">Your Device Only</span></td><td>Only you</td></tr>
+            <tr><td>Exercise records</td><td><span class="badge green">Your Device Only</span></td><td>Only you</td></tr>
+            <tr><td>Personal goals</td><td><span class="badge green">Your Device Only</span></td><td>Only you</td></tr>
+            <tr><td>Profile information</td><td><span class="badge green">Your Device Only</span></td><td>Only you</td></tr>
+        </table>
+    </div>
+    <div class="card">
+        <h2>💰 Purchases &amp; Payments</h2>
+        <p>All payments are processed by Apple (App Store). We never see or store credit card numbers, bank account details, or billing addresses. We only receive confirmation that a purchase was made.</p>
+    </div>
+    <div class="card">
+        <h2>🔐 Data Security</h2>
+        <h3>Local Storage Security</h3>
+        <p>Your data is stored in your device's secure local storage. This data is encrypted by your device's operating system, protected by your passcode/Face ID, inaccessible to other apps, and deleted when you uninstall the app.</p>
+        <h3>Data Transmission Security</h3>
+        <p>All connections use HTTPS encryption with industry-standard security protocols.</p>
+    </div>
+    <div class="card">
+        <h2>👤 Your Rights (GDPR / UK GDPR)</h2>
+        <p>You have the right to:</p>
+        <ul>
+            <li><strong>Access</strong> — View all your data (it's all on your device)</li>
+            <li><strong>Export</strong> — Use the Export feature to download your data as JSON</li>
+            <li><strong>Delete</strong> — Clear app data or uninstall to delete everything</li>
+            <li><strong>Portability</strong> — Export and import your data freely</li>
+        </ul>
+        <div class="highlight"><p>Because we don't store your data on our servers, you have <strong>complete control</strong>. There's nothing for us to delete because we don't have it.</p></div>
+    </div>
+    <div class="card">
+        <h2>👶 Children's Privacy</h2>
+        <p>CaloriePro is not intended for children under 13. We do not knowingly collect information from children. If you believe a child has provided us with information, please contact us.</p>
+    </div>
+    <div class="card">
+        <h2>🔄 Changes to This Policy</h2>
+        <p>We may update this privacy policy from time to time. We will notify you of any changes by posting the new policy in the app, updating the "Last Updated" date below, and for significant changes, showing a notification in the app.</p>
+    </div>
+    <div class="card">
+        <h2>📧 Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy, please contact us:</p>
+        <ul>
+            <li>Email: <a href="mailto:caloriepro@gmail.com">caloriepro@gmail.com</a></li>
+            <li>Website: <a href="https://super-duper-software-uk.github.io/caloriepro/">super-duper-software-uk.github.io/caloriepro</a></li>
+        </ul>
+    </div>
+    <p class="date">Last Updated: February 2026</p>
+</div>
+<footer>
+    <div class="footer-links">
+        <a href="index.html">Home</a><a href="support.html">Support</a><a href="faq.html">FAQ</a><a href="terms.html">Terms</a>
+    </div>
+    <p class="footer-copy">&copy; 2025–2026 Super Duper Software UK. All rights reserved.</p>
+</footer>
+</body>
+</html>

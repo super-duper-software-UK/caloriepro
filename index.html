@@ -11,9 +11,7 @@
         
         /* Header */
         .hero { text-align: center; padding: 80px 20px 60px; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
-        .logo { margin-bottom: 24px; }
-        .app-icon { width: 140px; height: 140px; border-radius: 32px; box-shadow: 0 0 60px rgba(16,185,129,0.4), 0 0 120px rgba(16,185,129,0.15); transition: transform 0.3s; }
-        .app-icon:hover { transform: scale(1.05); }
+        .logo { font-size: 4rem; margin-bottom: 16px; }
         .hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 12px; }
         .hero h1 span { color: #10b981; }
         .hero .tagline { font-size: 1.2rem; color: #94a3b8; max-width: 500px; margin: 0 auto 32px; }
@@ -36,7 +34,7 @@
         .privacy-section { padding: 60px 20px; text-align: center; background: #1e293b; }
         .privacy-section h2 { font-size: 1.8rem; margin-bottom: 16px; }
         .privacy-section h2 span { color: #10b981; }
-        .privacy-section > p { color: #94a3b8; max-width: 600px; margin: 0 auto 30px; font-size: 1rem; }
+        .privacy-section p { color: #94a3b8; max-width: 600px; margin: 0 auto 30px; font-size: 1rem; }
         .privacy-grid { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; max-width: 700px; margin: 0 auto; }
         .privacy-item { text-align: center; flex: 1; min-width: 140px; }
         .privacy-item .icon { font-size: 2rem; margin-bottom: 8px; }
@@ -52,7 +50,7 @@
         .pricing-card .price-note { color: #94a3b8; font-size: 1rem; margin-bottom: 20px; }
         .pricing-includes { text-align: left; list-style: none; margin-bottom: 20px; }
         .pricing-includes li { padding: 6px 0; font-size: 0.9rem; color: #cbd5e1; }
-        .pricing-includes li::before { content: "\2705 "; }
+        .pricing-includes li::before { content: "✅ "; }
         .pricing-promise { background: rgba(16,185,129,0.1); border-radius: 12px; padding: 16px; margin-top: 16px; font-size: 0.85rem; color: #94a3b8; }
         .pricing-promise strong { color: #10b981; }
 
@@ -73,10 +71,8 @@
         .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
 
         @media (max-width: 600px) {
-            .hero { padding: 60px 20px 40px; }
             .hero h1 { font-size: 2rem; }
             .hero .tagline { font-size: 1rem; }
-            .app-icon { width: 110px; height: 110px; border-radius: 26px; }
             .grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -84,7 +80,7 @@
 <body>
 
     <section class="hero">
-        <div class="logo"><img src="icon-512.png" alt="CaloriePro" class="app-icon"></div>
+        <div class="logo">🍎</div>
         <h1><span>Calorie</span>Pro</h1>
         <p class="tagline">Track calories, macros, exercise and weight with complete privacy. All your data stays on your device.</p>
         <div class="badge-row">
@@ -115,8 +111,8 @@
             </div>
             <div class="card">
                 <div class="card-icon">🏃</div>
-                <h3>400+ Exercises</h3>
-                <p>Huge exercise library with MET-based calorie calculations. Log cardio, strength training, sets and reps.</p>
+                <h3>Exercise Logging</h3>
+                <p>155+ exercises with MET-based calorie calculations. Log cardio, strength training, sets and reps.</p>
             </div>
             <div class="card">
                 <div class="card-icon">⚖️</div>
@@ -182,7 +178,7 @@
                 <li>5,000+ UK food database</li>
                 <li>Barcode scanner</li>
                 <li>Macro tracking with ring visualisations</li>
-                <li>Exercise logging (400+ exercises)</li>
+                <li>Exercise logging (155+ exercises)</li>
                 <li>Weight tracking with charts</li>
                 <li>Progress photos</li>
                 <li>Achievements &amp; gamification</li>

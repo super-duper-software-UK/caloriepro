@@ -1,179 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ — CaloriePro</title>
-    <meta name="description" content="Frequently asked questions about CaloriePro, the privacy-first calorie tracker.">
-    <meta name="theme-color" content="#10b981">
-    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>CaloriePro - FAQ</title>
     <style>
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --primary: #10b981; --primary-dark: #059669;
-            --dark: #0f172a; --darker: #020617; --card: #1e293b; --card-border: #334155;
-            --text: #f1f5f9; --text-muted: #94a3b8; --text-dim: #64748b;
-        }
-        body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--darker); color: var(--text); line-height: 1.7; }
-        a { color: var(--primary); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-
-        .header { text-align: center; padding: 80px 20px 60px; }
-        .header img { width: 72px; height: 72px; margin-bottom: 20px; }
-        .header h1 { font-size: 2.4rem; font-weight: 700; margin-bottom: 12px; }
-        .header p { color: var(--text-muted); font-size: 1.05rem; }
-        .back { display: inline-block; margin-bottom: 20px; color: var(--text-muted); font-size: 0.9rem; }
-
-        .container { max-width: 740px; margin: 0 auto; padding: 0 20px 80px; }
-
-        .faq-group { margin-bottom: 40px; }
-        .faq-group-title { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--primary); font-weight: 600; margin-bottom: 16px; padding-left: 4px; }
-
-        .faq-item { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; transition: border-color 0.2s; }
-        .faq-item.open { border-color: var(--primary); }
-        .faq-q { padding: 20px 24px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 0.95rem; user-select: none; }
-        .faq-q:hover { color: var(--primary); }
-        .faq-arrow { transition: transform 0.3s; font-size: 0.8rem; color: var(--text-dim); }
-        .faq-item.open .faq-arrow { transform: rotate(180deg); color: var(--primary); }
-        .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; }
-        .faq-item.open .faq-a { max-height: 500px; padding: 0 24px 20px; }
-        .faq-a p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
-        .faq-a p + p { margin-top: 10px; }
-
-        .contact-box { text-align: center; background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 40px 24px; margin-top: 60px; }
-        .contact-box h3 { margin-bottom: 8px; }
-        .contact-box p { color: var(--text-muted); margin-bottom: 20px; }
-        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 10px; font-weight: 600; font-size: 0.95rem; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; transition: all 0.25s; }
-        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16,185,129,0.3); text-decoration: none; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif; background: #f5f5f7; color: #1d1d1f; line-height: 1.6; padding: 0 0 40px; }
+        .header { background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 60px 20px 30px; text-align: center; }
+        .header h1 { font-size: 1.8rem; margin-bottom: 8px; }
+        .subtitle { font-size: 0.95rem; opacity: 0.9; }
+        .container { max-width: 700px; margin: 0 auto; padding: 20px; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #10b981; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+        .back-link:hover { text-decoration: underline; }
+        .faq-section { margin-bottom: 30px; }
+        .faq-section h2 { font-size: 1.2rem; color: #1d1d1f; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #10b981; }
+        .faq-item { background: white; border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+        .faq-question { font-weight: 700; font-size: 1rem; color: #1d1d1f; margin-bottom: 8px; }
+        .faq-answer { color: #4a4a4a; font-size: 0.9rem; }
+        .faq-answer p { margin-bottom: 8px; }
+        .faq-answer ul, .faq-answer ol { margin-left: 20px; margin-top: 8px; }
+        .faq-answer li { margin-bottom: 4px; }
+        .highlight-box { background: #ecfdf5; border-left: 4px solid #10b981; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-top: 10px; font-size: 0.85rem; }
     </style>
 </head>
 <body>
+    <div class="header">
+        <h1>❓ Frequently Asked Questions</h1>
+        <p class="subtitle">Everything you need to know about CaloriePro</p>
+    </div>
 
-<div class="header">
-    <a href="index.html" class="back">← Back to Home</a>
-    <br>
-    <img src="icon-192.png" alt="CaloriePro">
-    <h1>Frequently Asked Questions</h1>
-    <p>Everything you need to know about CaloriePro</p>
-</div>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to App</a>
 
-<div class="container">
-
-    <div class="faq-group">
-        <div class="faq-group-title">Getting Started</div>
-
-        <div class="faq-item">
-            <div class="faq-q">What is CaloriePro? <span class="faq-arrow">▼</span></div>
-            <div class="faq-a"><p>CaloriePro is a calorie, macro, and exercise tracker designed for UK users. It includes a database of 5,000+ UK-specific foods and 400+ exercises. The app works offline and stores all data locally on your device — no account needed, no data collected.</p></div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-q">How much does CaloriePro cost? <span class="faq-arrow">▼</span></div>
-            <div class="faq-a"><p>CaloriePro is available as a one-time purchase from the App Store. There are no ads, no subscriptions, no in-app purchases, and your data is never collected or sold. You pay once and get every feature — no hidden costs.</p></div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-q">Do I need to create an account? <span class="faq-arrow">▼</span></div>
-            <div class="faq-a"><p>No. CaloriePro works without any account, sign-up, or login. Just open the app and start tracking.</p></div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-q">How do I get CaloriePro? <span class="faq-arrow">▼</span></div>
-            <div class="faq-a">
-                <p><strong>iPhone:</strong> Download CaloriePro from the Apple App Store. Search for "CaloriePro" or visit our App Store page.</p>
-                <p><strong>Android:</strong> CaloriePro is coming soon to Google Play. Stay tuned!</p>
-                <p>Once installed, open the app and start tracking straight away — no account or sign-up needed.</p>
+        <div class="faq-section">
+            <h2>🚀 Getting Started</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I get started with CaloriePro?</div>
+                <div class="faq-answer">
+                    <p>Just open the app and follow the quick tutorial. Set up your profile with your age, height, weight, and activity level, and CaloriePro will calculate your personalised calorie and macro targets. No account or signup needed — start tracking straight away.</p>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <div class="faq-group">
-        <div class="faq-group-title">Privacy & Data</div>
+            <div class="faq-item">
+                <div class="faq-question">Do I need to create an account?</div>
+                <div class="faq-answer">
+                    <p>No! CaloriePro works without any account or signup. Your data is stored locally on your device. Just open the app and start tracking.</p>
+                </div>
+            </div>
 
-        <div class="faq-item">
-            <div class="faq-q">Where is my data stored? <span class="faq-arrow">▼</span></div>
-            <div class="faq-a"><p>Everything is stored locally on your device using the app's secure built-in storage. Your meals, weight, exercises, and settings never leave your phone or computer. We have no servers that store user data.</p></div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-q">Can you see my data? <span class="faq-arrow">▼</span></div>
-            <div class="faq-a"><p>No. We literally cannot see your data. There are no analytics, no tracking pixels, and no server-side storage. Your health information stays on your device and is only accessible to you.</p></div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-q">What happens if I delete the app? <span class="faq-arrow">▼</span></div>
-            <div class="faq-a"><p>Uninstalling CaloriePro will delete all your data. We strongly recommend using the Backup feature regularly — go to the Data &amp; Support section to export a backup file you can restore later.</p></div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-q">Can I export my data? <span class="faq-arrow">▼</span></div>
-            <div class="faq-a"><p>Yes! You can export your data in multiple formats — JSON (for backup/restore), CSV (for spreadsheets), Excel, and PDF reports. Go to the Reports or Data & Support section in the app.</p></div>
-        </div>
-    </div>
-
-    <div class="faq-group">
-        <div class="faq-group-title">Features</div>
-
-        <div class="faq-item">
-            <div class="faq-q">How accurate is the food database? <span class="faq-arrow">▼</span></div>
-            <div class="faq-a"><p>Our database contains 5,000+ UK foods with calorie, protein, carbohydrate, and fat values. Values are sourced from manufacturer data and nutritional databases. As with any tracker, values are estimates — actual nutrition can vary between batches and preparation methods.</p></div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-q">Can I add my own foods? <span class="faq-arrow">▼</span></div>
-            <div class="faq-a"><p>Yes. You can add custom foods with your own calorie and macro values. Custom foods are saved to your device and appear alongside the built-in database when searching.</p></div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-q">Does it work offline? <span class="faq-arrow">▼</span></div>
-            <div class="faq-a"><p>Yes, CaloriePro works fully offline. All data and features are stored on your device. You can track meals, log exercises, and view reports without any internet connection.</p></div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-q">What exercise types are supported? <span class="faq-arrow">▼</span></div>
-            <div class="faq-a"><p>CaloriePro supports 400+ exercises across cardio and strength training. Cardio exercises calculate calories based on duration and MET values. Strength exercises track sets, reps, and weight with accurate calorie calculations.</p></div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-q">Can I track past days? <span class="faq-arrow">▼</span></div>
-            <div class="faq-a"><p>Yes. Use the date navigation on the dashboard to go back to any previous day. You can add, edit, or delete meals and exercises for past dates.</p></div>
-        </div>
-    </div>
-
-    <div class="faq-group">
-        <div class="faq-group-title">Troubleshooting</div>
-
-        <div class="faq-item">
-            <div class="faq-q">The app isn't loading or looks broken <span class="faq-arrow">▼</span></div>
-            <div class="faq-a">
-                <p>Try these steps in order:</p>
-                <p>1. Close the app completely and reopen it.</p>
-                <p>2. Close and reopen the app.</p>
-                <p>3. If the issue persists, uninstall and reinstall the app from the App Store.</p>
-                <p>If the issue persists, contact us at caloriepro@gmail.com.</p>
+            <div class="faq-item">
+                <div class="faq-question">How much does CaloriePro cost?</div>
+                <div class="faq-answer">
+                    <p>CaloriePro is available as a <strong>one-off purchase</strong> — pay once and the app is yours. This single payment includes every feature in the app: calorie and macro tracking, the 5,000+ food database, barcode scanner, exercise logging, weight tracking, progress photos, reports, export tools, achievements, and everything else.</p>
+                    <p>There are <strong>no ads</strong> and <strong>no hidden costs</strong>.</p>
+                    <p>In the future, we may introduce optional premium features that add extra value. These could be offered as one-off in-app purchases or an optional subscription. However, these are entirely optional.</p>
+                    <div class="highlight-box">
+                        <strong>💡 Our Promise:</strong> The base app will always include every feature that was part of CaloriePro when you bought it. We will never remove existing features or move them behind a paywall. What you buy is what you keep.
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="faq-item">
-            <div class="faq-q">I lost all my data <span class="faq-arrow">▼</span></div>
-            <div class="faq-a"><p>If you have a backup file, go to Data & Support → Import/Restore and select your backup. If you don't have a backup, unfortunately the data cannot be recovered — this is the trade-off of local-only storage. We recommend exporting a backup regularly.</p></div>
+        <div class="faq-section">
+            <h2>📱 Using the App</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I log a meal?</div>
+                <div class="faq-answer">
+                    <p>There are several ways:</p>
+                    <ul>
+                        <li>Tap the green <strong>+</strong> button (always visible at the bottom)</li>
+                        <li>Search for foods in the database (5,000+ UK foods)</li>
+                        <li>Scan a barcode using the camera</li>
+                        <li>Enter food details manually</li>
+                        <li>Use Build-a-Meal to combine multiple foods</li>
+                        <li>Reuse saved meal templates</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I log meals for past days?</div>
+                <div class="faq-answer">
+                    <p>Yes! Use the arrow buttons on the dashboard to navigate between days, or tap any day on the calendar to view and edit that day's entries.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How does the calorie target work?</div>
+                <div class="faq-answer">
+                    <p>CaloriePro calculates your target using the Mifflin-St Jeor equation, which is scientifically validated. It considers your age, gender, height, weight, activity level, and goal (lose/maintain/gain). You can also set custom targets in Profile settings.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What's the mood tracker for?</div>
+                <div class="faq-answer">
+                    <p>Research shows diet affects mood. Track how you feel each day to spot patterns — you might notice you feel better on days you eat more protein, drink more water, or exercise. It's a simple way to connect your food choices to your wellbeing.</p>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <div class="contact-box">
-        <h3>Still have questions?</h3>
-        <p>We're happy to help with anything else.</p>
-        <a href="mailto:caloriepro@gmail.com" class="btn">📧 caloriepro@gmail.com</a>
-    </div>
+        <div class="faq-section">
+            <h2>🔒 Privacy & Data</h2>
 
-</div>
+            <div class="faq-item">
+                <div class="faq-question">Where is my data stored?</div>
+                <div class="faq-answer">
+                    <p>All your data is stored locally on your device. It never leaves your phone. We have no servers collecting your information — your health data is completely private.</p>
+                </div>
+            </div>
 
-<script>
-    document.querySelectorAll('.faq-q').forEach(q => {
-        q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
-    });
-</script>
+            <div class="faq-item">
+                <div class="faq-question">Can I backup my data?</div>
+                <div class="faq-answer">
+                    <p>Yes! Go to Profile → Backup to Files for a quick backup, or use Export Report for PDF, CSV, or JSON formats. You can restore from a JSON backup at any time.</p>
+                </div>
+            </div>
 
-</body>
-</html>
+            <div class="faq-item">
+                <div class="faq-question">Can I transfer data to a new phone?</div>
+                <div class="faq-answer">
+                    <p>Yes! Export your data as JSON on your old device, transfer the file (via AirDrop, email, iCloud, etc.), then import it on your new device using Profile → Restore.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>🏃 Exercise & Nutrition</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">How are exercise calories calculated?</div>
+                <div class="faq-answer">
+                    <p>We use MET (Metabolic Equivalent of Task) values — the scientific standard for measuring exercise intensity. Calories burned = MET × body weight (kg) × duration (hours). Your weight is taken from your profile for accurate calculations.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What macro targets should I set?</div>
+                <div class="faq-answer">
+                    <p>By default, CaloriePro uses balanced targets: 25% protein, 50% carbs, 25% fat. For weight loss, some prefer higher protein (30-35%). For athletes, carbs might be higher. You can set custom targets in Profile → Custom Macro Targets.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Are the food calories accurate?</div>
+                <div class="faq-answer">
+                    <p>Our database uses official UK nutrition data where available. For branded items (Greggs, Nando's, Costa, etc.), we use values from their published nutrition information. The barcode scanner pulls data from the OpenFoodFacts database. You can always adjust values or add custom foods if needed.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>🔧 Troubleshooting</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">The barcode scanner isn't working</div>
+                <div class="faq-answer">
+                    <p>The scanner needs camera permission. Go to your iPhone Settings → CaloriePro and ensure Camera is enabled. Also make sure you have good lighting and hold the barcode steady. Not all products are in the database — if a barcode isn't found, you'll be prompted to add the food manually.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I reset the app?</div>
+                <div class="faq-answer">
+                    <p>Go to Profile → Reset App. You'll need to confirm twice (including typing "DELETE") to prevent accidental data loss. <strong>This cannot be undone</strong> — make sure you've backed up your data first if you want to keep it.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">I have a suggestion or found a bug</div>
+                <div class="faq-answer">
+                    <p>We'd love to hear from you! Go to Profile → Send Feedback to send us a message directly from the app. You can also email us at <a href="/cdn-cgi/l/email-protection#f390929f9c819a9683819cb3949e929a9fdd909c9e" style="color:#10b981;"><span class="__cf_email__" data-cfemail="5033313c3f22393520223f10373d313

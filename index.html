@@ -25,6 +25,23 @@
         a { color: var(--primary-light); text-decoration: none; transition: color 0.2s; }
         a:hover { color: var(--primary); }
 
+        /* === KEY MESSAGES BANNER === */
+        .key-banner {
+            background: linear-gradient(135deg, rgba(16,185,129,0.12) 0%, rgba(59,130,246,0.06) 100%);
+            border-bottom: 1px solid var(--card-border);
+        }
+        .banner-scroll {
+            display: flex; align-items: center; justify-content: center;
+            gap: 32px; padding: 12px 20px; flex-wrap: wrap;
+        }
+        .banner-item {
+            display: flex; align-items: center; gap: 8px;
+            font-size: 0.82rem; font-weight: 600; color: var(--text-muted); white-space: nowrap;
+        }
+        .banner-item .bi-icon { font-size: 1rem; }
+        .banner-item .bi-highlight { color: var(--primary-light); }
+        .banner-sep { width: 4px; height: 4px; border-radius: 50%; background: var(--card-border); flex-shrink: 0; }
+
         /* === HERO === */
         .hero {
             min-height: 100vh; display: flex; align-items: center; justify-content: center;
@@ -42,7 +59,11 @@
             background-size: 60px 60px;
         }
         .hero-content { position: relative; z-index: 1; text-align: center; max-width: 720px; }
-        .hero-logo { width: 120px; height: 120px; margin: 0 auto 32px; filter: drop-shadow(0 8px 24px rgba(16,185,129,0.3)); animation: float 6s ease-in-out infinite; }
+        .hero-logo {
+            width: 130px; height: 130px; margin: 0 auto 32px;
+            filter: drop-shadow(0 8px 24px rgba(16,185,129,0.3));
+            animation: float 6s ease-in-out infinite;
+        }
         @keyframes float { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-12px); } }
         .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 20px; }
         .hero h1 .accent { background: linear-gradient(135deg, var(--primary), var(--blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
@@ -83,6 +104,82 @@
         .feature-card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
         .feature-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
 
+        /* === OFFLINE EXPLAINER === */
+        .offline-section { background: linear-gradient(180deg, var(--darker) 0%, rgba(59,130,246,0.04) 50%, var(--darker) 100%); }
+        .offline-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; max-width: 940px; margin: 0 auto; }
+        .offline-visual { text-align: center; }
+        .offline-ring {
+            width: 180px; height: 180px; border-radius: 50%;
+            border: 6px solid var(--primary);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto; position: relative;
+            box-shadow: 0 0 60px rgba(16,185,129,0.15), inset 0 0 40px rgba(16,185,129,0.05);
+        }
+        .offline-ring::before {
+            content: ''; position: absolute; inset: -14px; border-radius: 50%;
+            border: 2px dashed rgba(16,185,129,0.2);
+            animation: spin 30s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .offline-ring-text { text-align: center; }
+        .offline-ring-text .big { font-size: 2.2rem; font-weight: 700; color: var(--primary-light); line-height: 1; }
+        .offline-ring-text .small { font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+        .offline-details h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 12px; }
+        .offline-details p { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px; }
+        .offline-list { list-style: none; margin: 0; padding: 0; }
+        .offline-list li { padding: 8px 0; display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem; color: var(--text-muted); }
+        .offline-list .ol-icon { flex-shrink: 0; width: 22px; text-align: center; }
+        .offline-note {
+            margin-top: 20px; padding: 14px 18px; border-radius: 10px;
+            background: rgba(59,130,246,0.08); border-left: 3px solid var(--blue);
+            font-size: 0.84rem; color: var(--text-muted);
+        }
+        .offline-note strong { color: var(--blue); }
+
+        /* === PRICING SECTION === */
+        .pricing-section { background: linear-gradient(180deg, var(--darker) 0%, rgba(16,185,129,0.05) 50%, var(--darker) 100%); }
+        .pricing-card {
+            max-width: 620px; margin: 0 auto;
+            background: var(--card); border: 2px solid var(--primary);
+            border-radius: 20px; overflow: hidden; position: relative;
+        }
+        .pricing-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--blue), var(--primary));
+        }
+        .pricing-header { padding: 36px 36px 0; text-align: center; }
+        .pricing-tag {
+            display: inline-block; padding: 5px 16px; border-radius: 20px;
+            background: rgba(16,185,129,0.12); color: var(--primary-light);
+            font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+        .pricing-header h3 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+        .pricing-header .price-line { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 4px; }
+        .pricing-header .price-line strong { color: var(--primary-light); font-size: 1.2rem; }
+        .pricing-body { padding: 28px 36px 36px; }
+        .pricing-body h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); font-weight: 600; margin-bottom: 14px; }
+        .included-list { list-style: none; padding: 0; margin: 0 0 24px; columns: 2; column-gap: 20px; }
+        .included-list li {
+            padding: 5px 0; font-size: 0.88rem; color: var(--text-muted);
+            display: flex; align-items: center; gap: 8px; break-inside: avoid;
+        }
+        .included-list li .il-check { color: var(--primary); font-weight: 700; flex-shrink: 0; }
+        .pricing-divider { height: 1px; background: var(--card-border); margin: 24px 0; }
+        .future-note {
+            padding: 16px 20px; border-radius: 12px;
+            background: rgba(245,158,11,0.06); border: 1px solid rgba(245,158,11,0.15);
+        }
+        .future-note h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--amber); font-weight: 600; margin-bottom: 8px; }
+        .future-note p { color: var(--text-muted); font-size: 0.85rem; margin: 0; line-height: 1.6; }
+        .pricing-promise {
+            margin-top: 24px; text-align: center;
+            padding: 16px 20px; border-radius: 12px;
+            background: rgba(16,185,129,0.06); border: 1px solid rgba(16,185,129,0.15);
+        }
+        .pricing-promise p { color: var(--text-muted); font-size: 0.85rem; margin: 0; }
+        .pricing-promise strong { color: var(--primary-light); }
+
         /* === PRIVACY SECTION === */
         .privacy-section { background: linear-gradient(180deg, var(--darker) 0%, rgba(16,185,129,0.05) 50%, var(--darker) 100%); }
         .privacy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; max-width: 900px; margin: 0 auto; }
@@ -111,11 +208,29 @@
         @media (max-width: 768px) {
             .privacy-grid { grid-template-columns: 1fr; text-align: center; }
             .privacy-points { max-width: 400px; margin: 0 auto; }
+            .offline-grid { grid-template-columns: 1fr; text-align: center; }
+            .offline-details { text-align: left; }
             .hero-badges { gap: 16px; }
+            .included-list { columns: 1; }
+            .banner-scroll { gap: 16px; }
+            .banner-sep { display: none; }
         }
     </style>
 </head>
 <body>
+
+<!-- KEY MESSAGES BANNER -->
+<div class="key-banner">
+    <div class="banner-scroll">
+        <div class="banner-item"><span class="bi-icon">📶</span> <span class="bi-highlight">100% Offline*</span> — No internet needed</div>
+        <div class="banner-sep"></div>
+        <div class="banner-item"><span class="bi-icon">💰</span> <span class="bi-highlight">One-Off Payment</span> — No subscriptions</div>
+        <div class="banner-sep"></div>
+        <div class="banner-item"><span class="bi-icon">🔒</span> <span class="bi-highlight">Your Data, Your Device</span> — Zero collection</div>
+        <div class="banner-sep"></div>
+        <div class="banner-item"><span class="bi-icon">🚫</span> <span class="bi-highlight">No Ads, Ever</span></div>
+    </div>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -125,7 +240,7 @@
         <h1>Track your nutrition.<br><span class="accent">Keep your privacy.</span></h1>
         <p>CaloriePro is a privacy-first, offline calorie and macro tracker with 5,000+ UK foods and 400+ exercises. No ads. No account. No cloud. Your data never leaves your device.</p>
         <div class="hero-cta">
-            <a href="#" class="btn btn-primary" onclick="alert('CaloriePro will be available on the App Store soon!');return false;"><img src="icon-192.png" alt="" style="width:20px;height:20px;vertical-align:middle;margin-right:6px;border-radius:4px;">Coming to App Store</a>
+            <a href="#" class="btn btn-primary" onclick="alert('CaloriePro will be available on the App Store soon!');return false;"> Coming to App Store</a>
             <a href="#features" class="btn btn-outline">See Features ↓</a>
         </div>
         <div class="hero-badges">
@@ -159,7 +274,7 @@
         <div class="features-grid">
             <div class="feature-card">
                 <span class="feature-icon">🍽️</span>
-                <h3>Calorie & Macro Tracking</h3>
+                <h3>Calorie &amp; Macro Tracking</h3>
                 <p>Log meals with full protein, carb, and fat breakdowns. Beautiful ring display shows your daily progress at a glance.</p>
             </div>
             <div class="feature-card">
@@ -183,24 +298,107 @@
                 <p>Hit your daily hydration goal with tap-to-log water tracking. Celebrations when you reach your target.</p>
             </div>
             <div class="feature-card">
-                <span class="feature-icon">📶</span>
-                <h3>100%* Offline</h3>
-                <p>CaloriePro works entirely offline — all tracking, logging, reports, and data stay on your device. *The only feature that requires an internet connection is barcode scanning, which looks up product data online. Everything else works without a signal.</p>
-            </div>
-            <div class="feature-card">
                 <span class="feature-icon">📊</span>
-                <h3>Reports & Export</h3>
+                <h3>Reports &amp; Export</h3>
                 <p>Generate detailed reports with charts and insights. Export to PDF, Excel, CSV, or JSON — your data, your way.</p>
             </div>
             <div class="feature-card">
                 <span class="feature-icon">🏆</span>
-                <h3>Achievements & XP</h3>
+                <h3>Achievements &amp; XP</h3>
                 <p>Earn achievements, gain XP, and level up as you build healthy habits. Streak tracking keeps you motivated.</p>
             </div>
             <div class="feature-card">
                 <span class="feature-icon">📅</span>
-                <h3>Calendar & History</h3>
+                <h3>Calendar &amp; History</h3>
                 <p>Navigate through past days, view weekly summaries, and spot patterns in your nutrition over time.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">😊</span>
+                <h3>Mood &amp; Energy</h3>
+                <p>Track how you feel alongside what you eat. Spot connections between your nutrition, mood, and energy levels.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- OFFLINE EXPLAINER -->
+<section class="section offline-section" id="offline">
+    <div class="container">
+        <div class="section-header">
+            <h2>100%* Offline — your tracker, no signal required</h2>
+            <p>CaloriePro is built to work anywhere, anytime — without needing a Wi-Fi or mobile connection.</p>
+        </div>
+        <div class="offline-grid">
+            <div class="offline-visual">
+                <div class="offline-ring">
+                    <div class="offline-ring-text">
+                        <div class="big">100%*</div>
+                        <div class="small">Offline</div>
+                    </div>
+                </div>
+            </div>
+            <div class="offline-details">
+                <h3>Works without internet</h3>
+                <p>Every core feature of CaloriePro runs entirely on your device. Nothing is fetched from the cloud, and nothing is sent anywhere.</p>
+                <ul class="offline-list">
+                    <li><span class="ol-icon">✅</span> Log meals, calories, and macros — offline</li>
+                    <li><span class="ol-icon">✅</span> Search 5,000+ UK foods — offline</li>
+                    <li><span class="ol-icon">✅</span> Log exercises and track weight — offline</li>
+                    <li><span class="ol-icon">✅</span> View reports, charts, and history — offline</li>
+                    <li><span class="ol-icon">✅</span> Export data to PDF, CSV, Excel, JSON — offline</li>
+                    <li><span class="ol-icon">✅</span> Track water and achievements — offline</li>
+                </ul>
+                <div class="offline-note">
+                    <strong>*When does it go online?</strong> The only feature that uses an internet connection is <strong>barcode scanning</strong>, which looks up product information from an online database. Everything else — every search, every log, every report — works without any signal at all.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING -->
+<section class="section pricing-section" id="pricing">
+    <div class="container">
+        <div class="section-header">
+            <h2>What does it cost?</h2>
+            <p>Simple, transparent pricing. Pay once, get everything.</p>
+        </div>
+        <div class="pricing-card">
+            <div class="pricing-header">
+                <div class="pricing-tag">One-Time Purchase</div>
+                <h3>CaloriePro</h3>
+                <p class="price-line"><strong>One-off payment</strong> from the App Store — no recurring charges</p>
+            </div>
+            <div class="pricing-body">
+                <h4>What you get for your money</h4>
+                <ul class="included-list">
+                    <li><span class="il-check">✓</span> Calorie &amp; macro tracking</li>
+                    <li><span class="il-check">✓</span> 5,000+ UK food database</li>
+                    <li><span class="il-check">✓</span> 400+ exercise library</li>
+                    <li><span class="il-check">✓</span> Weight &amp; BMI tracking</li>
+                    <li><span class="il-check">✓</span> Water tracking</li>
+                    <li><span class="il-check">✓</span> Mood &amp; energy tracking</li>
+                    <li><span class="il-check">✓</span> Reports &amp; export (PDF, Excel, CSV, JSON)</li>
+                    <li><span class="il-check">✓</span> Achievements &amp; XP system</li>
+                    <li><span class="il-check">✓</span> Calendar &amp; date navigation</li>
+                    <li><span class="il-check">✓</span> Custom foods &amp; saved meals</li>
+                    <li><span class="il-check">✓</span> Dark &amp; light themes</li>
+                    <li><span class="il-check">✓</span> Full offline support</li>
+                    <li><span class="il-check">✓</span> Data backup &amp; restore</li>
+                    <li><span class="il-check">✓</span> No ads, ever</li>
+                    <li><span class="il-check">✓</span> All future updates to base features</li>
+                </ul>
+
+                <div class="pricing-divider"></div>
+
+                <div class="future-note">
+                    <h4>⚠️ Future add-ons</h4>
+                    <p>We may introduce optional premium features in the future, available as a separate in-app purchase or subscription. These would provide additional functionality beyond the core app listed above. <strong>Your existing features will never be locked behind a paywall.</strong> Any premium extras will always be clearly identified and entirely optional.</p>
+                </div>
+
+                <div class="pricing-promise">
+                    <p><strong>Our promise:</strong> Everything listed above is yours forever with a single purchase. No ads, no data collection, no hidden costs. If we add premium extras later, they will always be optional and separate from the core experience.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -224,7 +422,7 @@
                     <li><span class="check">✓</span> No personal data sent to any server</li>
                     <li><span class="check">✓</span> No tracking, analytics, or advertising</li>
                     <li><span class="check">✓</span> Works completely offline</li>
-                    <li><span class="check">✓</span> GDPR & UK GDPR compliant by design</li>
+                    <li><span class="check">✓</span> GDPR &amp; UK GDPR compliant by design</li>
                     <li><span class="check">✓</span> Export and delete your data anytime</li>
                 </ul>
             </div>
@@ -235,14 +433,13 @@
 <!-- CTA -->
 <section class="cta-section">
     <h2>Start tracking in seconds</h2>
-    <p>Download CaloriePro from the App Store and start tracking in seconds. No account needed — just open the app and go.</p>
-    <a href="#" class="btn btn-primary" style="font-size:1.1rem; padding: 16px 36px;" onclick="alert('CaloriePro will be available on the App Store soon!');return false;"><img src="icon-192.png" alt="" style="width:24px;height:24px;vertical-align:middle;margin-right:8px;border-radius:5px;">Coming Soon to App Store</a>
+    <p>Download CaloriePro from the App Store and start tracking straight away. No account needed — just open the app and go.</p>
+    <a href="#" class="btn btn-primary" style="font-size:1.1rem; padding: 16px 36px;" onclick="alert('CaloriePro will be available on the App Store soon!');return false;"> Coming Soon to App Store</a>
 </section>
 
 <!-- FOOTER -->
 <footer>
     <div class="footer-links">
-        
         <a href="faq.html">FAQ</a>
         <a href="support.html">Support</a>
         <a href="changelog.html">Changelog</a>
@@ -250,7 +447,7 @@
         <a href="terms.html">Terms of Service</a>
         <a href="mailto:caloriepro@gmail.com">Contact</a>
     </div>
-    <p class="footer-copy">&copy; 2025-2026 Super Duper Software UK. All rights reserved.</p>
+    <p class="footer-copy">&copy; 2025–2026 Super Duper Software UK. All rights reserved.</p>
 </footer>
 
 </body>

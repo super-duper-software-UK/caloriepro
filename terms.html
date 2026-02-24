@@ -3,192 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - CaloriePro</title>
+    <title>Terms of Service — CaloriePro</title>
+    <meta name="theme-color" content="#10b981">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #f1f5f9; color: #1e293b; line-height: 1.7; }
-        .header { background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 40px 20px; text-align: center; margin-top: 80px; }
-        .header h1 { font-size: 2rem; margin-bottom: 12px; }
-        .header p { opacity: 1; font-size: 1.2rem; font-weight: 600; color: white; }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        .card { background: white; border-radius: 16px; padding: 32px; margin-bottom: 24px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
-        h2 { color: #3b82f6; font-size: 1.3rem; margin-bottom: 16px; }
-        p { margin-bottom: 16px; color: #475569; }
-        ul, ol { margin: 16px 0; padding-left: 24px; }
-        li { margin-bottom: 8px; color: #475569; }
-        .highlight { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 20px 0; }
-        .warning { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 20px 0; }
-        .date { text-align: center; color: #94a3b8; font-size: 0.9rem; margin-top: 40px; }
-        .back-btn { position: fixed; top: 60px; top: max(60px, calc(env(safe-area-inset-top) + 12px)); left: 20px; z-index: 1000; background: rgba(255,255,255,0.95); color: #10b981; text-decoration: none; padding: 10px 16px; border-radius: 8px; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.1); backdrop-filter: blur(10px); transition: all 0.2s; }
-        .back-btn:hover { background: white; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-        a { color: #3b82f6; }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #10b981; --primary-dark: #059669; --primary-light: #34d399; --dark: #0f172a; --darker: #020617; --card: #1e293b; --card-border: #334155; --text: #f1f5f9; --text-muted: #94a3b8; --text-dim: #64748b; --amber: #f59e0b; }
+        body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--darker); color: var(--text); line-height: 1.7; }
+        a { color: var(--primary-light); text-decoration: none; } a:hover { color: var(--primary); }
+        .header { text-align: center; padding: 80px 20px 60px; }
+        .header img { width: 72px; height: 72px; margin-bottom: 20px; }
+        .header h1 { font-size: 2.4rem; font-weight: 700; margin-bottom: 12px; }
+        .header p { color: var(--text-muted); font-size: 1.05rem; }
+        .back { display: inline-block; margin-bottom: 20px; color: var(--text-muted); font-size: 0.9rem; }
+        .container { max-width: 740px; margin: 0 auto; padding: 0 20px 80px; }
+        .card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 28px 24px; margin-bottom: 20px; }
+        .card h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 14px; }
+        .card h3 { font-size: 0.95rem; font-weight: 600; margin: 18px 0 10px; color: var(--text-muted); }
+        .card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px; } .card p:last-child { margin-bottom: 0; }
+        .card ul { list-style: none; margin: 12px 0; padding: 0; }
+        .card li { padding: 6px 0 6px 20px; position: relative; color: var(--text-muted); font-size: 0.9rem; }
+        .card li::before { content: '•'; position: absolute; left: 0; color: var(--primary); font-weight: 700; }
+        .highlight { background: rgba(16,185,129,0.08); border-left: 3px solid var(--primary); padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 16px 0; }
+        .highlight strong { color: var(--primary-light); } .highlight p { margin: 0; }
+        .warning { background: rgba(245,158,11,0.08); border-left: 3px solid var(--amber); padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 16px 0; }
+        .warning strong { color: var(--amber); } .warning p { margin: 0; }
+        .date { text-align: center; color: var(--text-dim); font-size: 0.85rem; margin-top: 40px; }
+        footer { text-align: center; padding: 32px 20px; border-top: 1px solid var(--card-border); margin-top: 40px; }
+        .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 16px; }
+        .footer-links a { color: var(--text-muted); font-size: 0.85rem; } .footer-links a:hover { color: var(--primary); }
+        .footer-copy { color: var(--text-dim); font-size: 0.75rem; }
     </style>
 </head>
 <body>
-    <a href="index.html" class="back-btn">← Back to App</a>
-    
-    <div class="header">
-        <h1>📋 Terms of Service</h1>
-        <p>CaloriePro</p>
-        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2ZmZmZmZiIgcng9IjIwIi8+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTBiOTgxIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzA1OTY2OSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI0NiIgcj0iMzYiIGZpbGw9InVybCgjZykiLz4KICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjQ2IiByPSIyOCIgZmlsbD0iI2ZmZiIvPgogIDxjaXJjbGUgY3g9IjUwIiBjeT0iNDYiIHI9IjIyIiBmaWxsPSJub25lIiBzdHJva2U9IiNFNUU3RUIiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtZGFzaGFycmF5PSIxMDQiIHN0cm9rZS1kYXNob2Zmc2V0PSIwIiB0cmFuc2Zvcm09InJvdGF0ZSgxMzUgNTAgNDYpIi8+CiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI0NiIgcj0iMjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzEwYjk4MSIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1kYXNoYXJyYXk9IjEwNCIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjI5IiB0cmFuc2Zvcm09InJvdGF0ZSgxMzUgNTAgNDYpIi8+CiAgPHRleHQgeD0iNTAiIHk9IjQ0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iSGVsdmV0aWNhLEFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmb250LXNpemU9IjEyIiBmaWxsPSIjMUUyOTNCIj4xLDQ4MDwvdGV4dD4KICA8dGV4dCB4PSI1MCIgeT0iNTMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EsQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI1IiBmaWxsPSIjNjQ3NDhCIj5rY2FsPC90ZXh0PgogIDxjaXJjbGUgY3g9IjQwIiBjeT0iNjIiIHI9IjIuNSIgZmlsbD0iI0VGNDQ0NCIvPgogIDxjaXJjbGUgY3g9IjUwIiBjeT0iNjIiIHI9IjIuNSIgZmlsbD0iIzNCODJGNiIvPgogIDxjaXJjbGUgY3g9IjYwIiBjeT0iNjIiIHI9IjIuNSIgZmlsbD0iI0Y1OUUwQiIvPgogIDx0ZXh0IHg9IjQwIiB5PSI2My4yIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iSGVsdmV0aWNhLEFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmb250LXNpemU9IjIuNSIgZmlsbD0iI2ZmZiI+UDwvdGV4dD4KICA8dGV4dCB4PSI1MCIgeT0iNjMuMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkhlbHZldGljYSxBcmlhbCxzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iYm9sZCIgZm9udC1zaXplPSIyLjUiIGZpbGw9IiNmZmYiPkM8L3RleHQ+CiAgPHRleHQgeD0iNjAiIHk9IjYzLjIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EsQXJpYWwsc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iMi41IiBmaWxsPSIjZmZmIj5GPC90ZXh0PgogIDx0ZXh0IHg9IjUwIiB5PSI5MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkhlbHZldGljYSxBcmlhbCxzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iYm9sZCIgZm9udC1zaXplPSI4IiBmaWxsPSIjMDU5NjY5Ij5DYWxvcmllUHJvPC90ZXh0Pgo8L3N2Zz4K" alt="CaloriePro Logo" style="width:80px;height:80px;display:block;margin:16px auto;">
+<div class="header">
+    <a href="index.html" class="back" onclick="if(window.history.length>1){window.history.back();return false;}">← Back</a><br>
+    <img src="icon-192.png" alt="CaloriePro">
+    <h1>Terms of Service</h1>
+    <p>The rules for using CaloriePro</p>
+</div>
+<div class="container">
+    <div class="card">
+        <h2>1. Acceptance of Terms</h2>
+        <p>By downloading, installing, or using CaloriePro ("the App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use the App.</p>
     </div>
-    
-    <div class="container">
-        <div class="card">
-            <h2>1. Acceptance of Terms</h2>
-            <p>By downloading, installing, or using CaloriePro ("the App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use the App.</p>
-            <p>These Terms apply to all users of the App.</p>
-        </div>
-
-        <div class="card">
-            <h2>2. Description of Service</h2>
-            <p>CaloriePro is a health and fitness tracking application that allows you to:</p>
-            <ul>
-                <li>Track daily calorie and nutrient intake</li>
-                <li>Log exercise and physical activities</li>
-                <li>Monitor weight and body measurements</li>
-                <li>Scan product barcodes for nutrition information</li>
-                <li>Set and track health goals</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>3. Medical Disclaimer</h2>
-            <div class="warning">
-                <strong>⚠️ Important:</strong> CaloriePro is NOT a medical device and is NOT intended to diagnose, treat, cure, or prevent any disease or health condition.
-            </div>
-            <p>The App provides general information for fitness and nutrition tracking purposes only. You should:</p>
-            <ul>
-                <li>Consult a healthcare professional before starting any diet or exercise program</li>
-                <li>Not rely solely on this App for medical decisions</li>
-                <li>Seek immediate medical attention for any health concerns</li>
-                <li>Understand that calorie and nutrition data are estimates and may not be 100% accurate</li>
-            </ul>
-            <p>We are not responsible for any health outcomes resulting from your use of the App.</p>
-        </div>
-
-        <div class="card">
-            <h2>4. User Accounts & Data</h2>
-            <h3>4.1 Local Storage</h3>
-            <p>Your health data is stored locally on your device. You are responsible for:</p>
-            <ul>
-                <li>Backing up your data using the Export feature</li>
-                <li>Securing your device with appropriate passwords/biometrics</li>
-                <li>Understanding that uninstalling the App will delete all data</li>
-            </ul>
-            
-            <h3>4.2 Data Accuracy</h3>
-            <p>You are responsible for the accuracy of the data you enter. We provide tools and databases to assist you, but cannot guarantee the accuracy of:</p>
-            <ul>
-                <li>Third-party food databases (Open Food Facts)</li>
-                <li>Calorie burn calculations</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>5. Pricing & Premium Features</h2>
-            <h3>5.1 Base App</h3>
-            <p>CaloriePro is available as a <strong>one-off purchase</strong>. This single payment gives you full access to all existing features of the app, including calorie and macro tracking, the food database, barcode scanner, exercise logging, weight tracking, progress photos, reports, export tools, and all other functionality available at the time of purchase.</p>
-            <div class="highlight">
-                <strong>💡 Our Promise:</strong> The base app will always include every feature that is part of CaloriePro at the time you buy it. We will never remove existing features or move them behind a paywall.
-            </div>
-
-            <h3>5.2 Premium Features</h3>
-            <p>From time to time, we may introduce new premium features that add extra value beyond the base app. These may be offered as:</p>
-            <ul>
-                <li>One-off in-app purchases for specific feature additions</li>
-                <li>An optional subscription for ongoing premium services</li>
-            </ul>
-            <p>Any premium features will be clearly identified before purchase. You are never required to buy them — the base app remains fully functional without them.</p>
-            
-            <h3>5.3 Billing</h3>
-            <p>All payments are processed through the Apple App Store or Google Play Store. By making a purchase, you agree that:</p>
-            <ul>
-                <li>Payment will be charged to your App Store/Play Store account</li>
-                <li>If a subscription is offered, it will auto-renew unless cancelled at least 24 hours before the renewal date</li>
-                <li>You can manage purchases and subscriptions in your device settings</li>
-            </ul>
-            
-            <h3>5.4 Refunds</h3>
-            <p>Refunds are handled by Apple/Google according to their respective policies. We cannot process refunds directly.</p>
-        </div>
-
-        <div class="card">
-            <h2>6. Acceptable Use</h2>
-            <p>You agree NOT to:</p>
-            <ul>
-                <li>Use the App for any unlawful purpose</li>
-                <li>Attempt to reverse engineer or modify the App</li>
-                <li>Circumvent any security features or usage limits</li>
-                <li>Share your premium subscription with others</li>
-                <li>Upload malicious content through any feature</li>
-                <li>Use the App to harm yourself or others</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>7. Intellectual Property</h2>
-            <p>The App, including its design, features, and content, is protected by copyright and other intellectual property laws. You may not:</p>
-            <ul>
-                <li>Copy, modify, or distribute the App</li>
-                <li>Use our branding, logos, or trademarks without permission</li>
-                <li>Create derivative works based on the App</li>
-            </ul>
-            <p>The food database is sourced from Open Food Facts under their open license terms.</p>
-        </div>
-
-        <div class="card">
-            <h2>8. Limitation of Liability</h2>
-            <p>To the maximum extent permitted by law:</p>
-            <ul>
-                <li>The App is provided "as is" without warranties of any kind</li>
-                <li>We are not liable for any indirect, incidental, or consequential damages</li>
-                <li>Our total liability is limited to the amount you paid for the App in the past 12 months</li>
-                <li>We are not responsible for data loss due to device failure or user error</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>9. Changes to Terms</h2>
-            <p>We may modify these Terms at any time. We will notify you of material changes through:</p>
-            <ul>
-                <li>In-app notifications</li>
-                <li>Email (if you've provided one)</li>
-                <li>Updating the "Last Updated" date</li>
-            </ul>
-            <p>Continued use of the App after changes constitutes acceptance of the new Terms.</p>
-        </div>
-
-        <div class="card">
-            <h2>10. Termination</h2>
-            <p>We may terminate or suspend your access to the App if you violate these Terms. You may stop using the App at any time by uninstalling it.</p>
-            <p>Upon termination:</p>
-            <ul>
-                <li>Your right to use the App ends immediately</li>
-                <li>Data stored locally on your device remains yours</li>
-                <li>No refunds will be provided for unused subscription periods (except where required by law)</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>11. Governing Law</h2>
-            <p>These Terms are governed by the laws of England and Wales. Any disputes will be resolved in the courts of England and Wales, except where consumer protection laws in your jurisdiction require otherwise.</p>
-        </div>
-
-        <div class="card">
-            <h2>12. Contact</h2>
-            <p>For questions about these Terms, contact us at:</p>
-            <ul>
-                <li>Email: <a href="/cdn-cgi/l/email-protection#2c4f4d40435e45495c5e436c4b414d4540024f4341"><span class="__cf_email__" data-cfemail="086b6964677a616d787a67486f65696164266b6765">[email&#160;protected]</span></a></li>
-                <li>Website: <a href="https://super-duper-software-uk.github.io/caloriepro/">super-duper-software-uk.github.io/caloriepro</a></li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>13. Additional Terms for App Stores</h2>
-            <h3>Apple App Store</h3>
-            <p>If you downloaded the App from the Apple App Store, you also agree to Apple's terms and acknowledge that Apple is not responsible for the App or its content. Apple has no obligation to provide maintenance or support services. In the event of any failure to conform to any applicable warranty, you may notify Apple and Apple will refund the purchase price (if any). To the maximum extent permitted by law, Apple has no other warranty obligation.</p>
-            <h3>Google Play Store</h3>
-            <p>If you downloaded the App from Google Play, you acknowledge that Google has no obligation to provide maintenance or support. Google is not responsible for addressing any claims relating to the App.</p>
-            <h3>General</h3>
-            <p>These additional terms apply only to the extent required by the relevant app store provider. In the event of any conflict between these Terms and the app store terms, the app store terms shall take precedence solely with res
+    <div class="card">
+        <h2>2. Description of Service</h2>
+        <p>CaloriePro is a health and fitness tracking application that allows you to:</p>
+        <ul>
+            <li>Track daily calorie and nutrient intake</li>
+            <li>Log exercise and physical activities</li>
+            <li>Monitor weight and body measurements</li>
+            <li>Set and track health goals</li>
+        </ul>
+    </div>
+    <div class="card">
+        <h2>3. Medical Disclaimer</h2>
+        <div class="warning"><p><strong>⚠️ Important:</strong> CaloriePro is NOT a medical device and is NOT intended to diagnose, treat, cure, or prevent any disease or health condition.</p></div>
+        <p>The App provides general information for fitness and nutrition tracking purposes only. You should consult a healthcare professional before starting any diet or exercise program, not rely solely on this App for medical decisions, and seek immediate medical attention for any health concerns. Calorie and nutrition data are estimates and may not be 100% accurate.</p>
+        <p>We are not responsible for any health outcomes resulting from your use of the App.</p>
+    </div>
+    <div class="card">
+        <h2>4. User Accounts &amp; Data</h2>
+        <h3>4.1 Local Storage</h3>
+        <p>Your health data is stored locally on your device. You are responsible for backing up your data using the Export feature, securing your device with appropriate passwords/biometrics, and understanding that uninstalling the App will delete all data.</p>
+        <h3>4.2 Data Accuracy</h3>
+        <p>You are responsible for the accuracy of the data you enter. We provide tools and databases to assist you, but cannot guarantee the accuracy of third-party food databases or calorie burn calculations.</p>
+    </div>
+    <div class="card">
+        <h2>5. Purchases</h2>
+        <h3>5.1 Billing</h3>
+        <p>CaloriePro is a one-time purchase from the App Store. Payment is charged to your App Store account at the point of purchase. All features included at the time of purchase are yours to keep.</p>
+        <h3>5.2 Future Premium Features</h3>
+        <p>We may introduce optional premium features or a subscription tier in the future. Any such offering would provide additional functionality beyond the core features included with your original purchase — your existing features will never be locked behind a paywall. Premium services, if introduced, would be offered as a separate, clearly identified in-app purchase or subscription, entirely optional, and would not affect the features you already have access to. We will always be transparent about what is included in the base app and what constitutes an add-on.</p>
+        <h3>5.3 Refunds</h3>
+        <p>Refunds are handled by Apple according to their policies. We cannot process refunds directly.</p>
+        <div class="highlight"><p><strong>📝 Our Promise:</strong> Every feature included at launch is yours forever with a single purchase. No ads, no data collection. If we add premium extras down the line, they will always be optional and clearly separate from the core experience.</p></div>
+    </div>
+    <div class="card">
+        <h2>6. Acceptable Use</h2>
+        <p>You agree NOT to:</p>
+        <ul>
+            <li>Use the App for any unlawful purpose</li>
+            <li>Attempt to reverse engineer or modify the App</li>
+            <li>Circumvent any security features or usage limits</li>
+            <li>Upload malicious content through any feature</li>
+            <li>Use the App to harm yourself or others</li>
+        </ul>
+    </div>
+    <div class="card">
+        <h2>7. Intellectual Property</h2>
+        <p>The App, including its design, features, and content, is protected by copyright and other intellectual property laws. You may not copy, modify, or distribute the App, use our branding, logos, or trademarks without permission, or create derivative works based on the App.</p>
+    </div>
+    <div class="card">
+        <h2>8. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by law, the App is provided "as is" without warranties of any kind. We are not liable for any indirect, incidental, or consequential damages. Our total liability is limited to the amount you paid for the App in the past 12 months. We are not responsible for data loss due to device failure or user error.</p>
+    </div>
+    <div class="card">
+        <h2>9. Changes to Terms</h2>
+        <p>We may modify these Terms at any time. We will notify you of material changes through in-app notifications and by updating the "Last Updated" date. Continued use of the App after changes constitutes acceptance of the new Terms.</p>
+    </div>
+    <div class="card">
+        <h2>10. Termination</h2>
+        <p>We may terminate or suspend your access to the App if you violate these Terms. You may stop using the App at any time by uninstalling it. Upon termination, your right to use the App ends immediately, but data stored locally on your device remains yours.</p>
+    </div>
+    <div class="card">
+        <h2>11. Governing Law</h2>
+        <p>These Terms are governed by the laws of England and Wales. Any disputes will be resolved in the courts of England and Wales, except where consumer protection laws in your jurisdiction require otherwise.</p>
+    </div>
+    <div class="card">
+        <h2>12. Contact</h2>
+        <p>For questions about these Terms, contact us at:</p>
+        <ul>
+            <li>Email: <a href="mailto:caloriepro@gmail.com">caloriepro@gmail.com</a></li>
+            <li>Website: <a href="https://super-duper-software-uk.github.io/caloriepro/">super-duper-software-uk.github.io/caloriepro</a></li>
+        </ul>
+    </div>
+    <div class="card">
+        <h2>13. Additional Terms for App Stores</h2>
+        <h3>Apple App Store</h3>
+        <p>If you downloaded the App from the Apple App Store, you also agree to Apple's terms and acknowledge that Apple is not responsible for the App or its content. Apple has no obligation to provide maintenance or support services. In the event of any failure to conform to any applicable warranty, you may notify Apple and Apple will refund the purchase price (if any). To the maximum extent permitted by law, Apple has no other warranty obligation.</p>
+    </div>
+    <p class="date">Last Updated: February 2026</p>
+</div>
+<footer>
+    <div class="footer-links">
+        <a href="index.html">Home</a><a href="support.html">Support</a><a href="faq.html">FAQ</a><a href="privacy.html">Privacy</a>
+    </div>
+    <p class="footer-copy">&copy; 2025–2026 Super Duper Software UK. All rights reserved.</p>
+</footer>
+</body>
+</html>
